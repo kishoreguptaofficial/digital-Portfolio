@@ -28,7 +28,8 @@
       "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:4321/)",
       "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:4321/css/styles.css)",
       "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:4321/js/main.js)",
-      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"Phase 2-3: full semantic rebuild — nav, hero, about, timeline, projects+filters, skills, articles, contact, footer\")"
+      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"Phase 2-3: full semantic rebuild — nav, hero, about, timeline, projects+filters, skills, articles, contact, footer\")",
+      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"docs: update changelog and status through Phase 3\")"
     ]
   }
 }

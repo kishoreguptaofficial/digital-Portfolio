@@ -12,9 +12,9 @@
 
 ## Phase checklist
 - [x] Phase 0 — Baseline & audit
-- [ ] Phase 1 — Design system (in progress)
-- [ ] Phase 2 — Layout & structure
-- [ ] Phase 3 — Section builds
+- [x] Phase 1 — Design system (approved: emerald-on-ink, system-default theme)
+- [x] Phase 2 — Layout & structure
+- [x] Phase 3 — Section builds (timeline, filters, skills, articles, contact all built)
 - [ ] Phase 4 — Articles
 - [ ] Phase 5 — Polish & motion
 - [ ] Phase 6 — Performance/SEO/accessibility
