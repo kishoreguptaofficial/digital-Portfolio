@@ -110,12 +110,12 @@
 
   --text: #11151c;
   --text-muted: #4a5464;
-  --text-dim: #6b7688;
-  --text-on-accent: #06231a;
+  --text-dim: #5b6675;       /* AA: 5.49:1 on light bg */
+  --text-on-accent: #ffffff; /* white on accent button — AA 5.86:1 */
 
-  --accent: #12a06a;         /* darkened for AA contrast on light */
-  --accent-strong: #0e845a;
-  --accent-soft: rgba(18, 160, 106, 0.12);
+  --accent: #0b7350;         /* AA: >=4.6:1 as small text on light + tinted chips */
+  --accent-strong: #096245;
+  --accent-soft: rgba(11, 115, 80, 0.12);
 
   --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
   --shadow-md: 0 10px 28px rgba(16, 24, 40, 0.10);
@@ -137,12 +137,12 @@
 
     --text: #11151c;
     --text-muted: #4a5464;
-    --text-dim: #6b7688;
-    --text-on-accent: #06231a;
+    --text-dim: #5b6675;
+    --text-on-accent: #ffffff;
 
-    --accent: #12a06a;
-    --accent-strong: #0e845a;
-    --accent-soft: rgba(18, 160, 106, 0.12);
+    --accent: #0b7350;
+    --accent-strong: #096245;
+    --accent-soft: rgba(11, 115, 80, 0.12);
 
     --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
     --shadow-md: 0 10px 28px rgba(16, 24, 40, 0.10);
