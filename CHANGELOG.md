@@ -22,3 +22,11 @@
 - Fixed all baseline bugs: `#year` crash, duplicate observer; removed dead `#` links.
 - Verified locally (localhost:4321): no console errors, filters/toggle/reveal/email-reveal all functional, all assets 200.
 - **Next:** Owner review; confirm correct phone number; Phase 4 (article pages), 5 (polish/404), 6 (perf/SEO/a11y audit), 7 (deploy).
+
+## 2026-07-26 — Phases 4–7
+- **Phase 4:** two full seed articles (`articles/scaling-test-framework.html`, `articles/accessibility-beyond-checklist.html`) in first-person voice, with mini-header + theme toggle, BlogPosting JSON-LD; homepage cards now link to them.
+- **Phase 5:** branded `404.html` ("This test case didn't pass"); scroll reveal, hover states, theme toggle, favicon, reduced-motion all in place.
+- **Phase 6 (perf/SEO/a11y):** generated `profile.webp` (158KB→22KB) + optimized JPG fallback via `<picture>`; `og-cover.png` (1200×630) social card; `robots.txt`, `sitemap.xml`. Ran axe-core on all 3 pages in **both light and dark** → **0 WCAG 2.1 AA violations**. Fixed light-mode contrast (accent → #0b7350, white button text, darker text-dim) and the mobile-menu aria-hidden-focus issue.
+- **Phase 7 (deploy prep only):** `CNAME` (kishoreguptaofficial.in), `.nojekyll`, and `README.md` with exact GitHub Pages + DNS steps. **Not deployed** — awaiting repo URL and owner go-ahead.
+- Phone confirmed: reveal = +91 99799 80993; WhatsApp link left unchanged per content rules.
+- **Next:** owner reviews site + article copy; provide GitHub repo to push; approve go-live.
