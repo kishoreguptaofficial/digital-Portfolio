@@ -38,7 +38,21 @@
       "Bash(export NODE_PATH=\"C:/Users/gupta/Desktop/Digital Portfolio Claude/node_modules\")",
       "Bash(git -c 'user.name=Kishore Gupta' -c user.email=swagatmohapatra1994@gmail.com commit -q -m 'Phase 4-7: articles + 404 + image optimization + SEO files + GitHub Pages deploy prep *)",
       "Bash(git -c 'user.name=Kishore Gupta' -c user.email=swagatmohapatra1994@gmail.com commit -q -m 'Phase 6: fix light-mode WCAG AA contrast — darker accent \\(#0b7350\\), white button text, darker text-dim *)",
-      "Bash(git commit -q -m 'Polish: crisp monogram logo mark + richer Apple-style motion *)"
+      "Bash(git commit -q -m 'Polish: crisp monogram logo mark + richer Apple-style motion *)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v1.svg __TRACKED_VAR__/logo-v1.png 340 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v2.svg __TRACKED_VAR__/logo-v2.png 340 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v3.svg __TRACKED_VAR__/logo-v3-dark.png 340 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v3.svg __TRACKED_VAR__/logo-v3-sm.png 48 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v4.svg __TRACKED_VAR__/logo-v4-dark.png 340 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v4.svg __TRACKED_VAR__/logo-v4-light.png 340 light)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v4.svg __TRACKED_VAR__/logo-v4-sm.png 44 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v5.svg __TRACKED_VAR__/logo-v5.png 340 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v6.svg __TRACKED_VAR__/logo-v6.png 340 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-v7.svg __TRACKED_VAR__/logo-v7.png 340 dark)",
+      "Bash(node __TRACKED_VAR__/render.js __TRACKED_VAR__/logo-full.svg __TRACKED_VAR__/logo-full.png 340 dark)",
+      "Bash(sed -i 's|images/logo-mark.svg|images/logo.svg|g' index.html)",
+      "Bash(sed -i 's|\\\\.\\\\./images/logo-mark.svg|../images/logo.svg|g' articles/accessibility-beyond-checklist.html articles/scaling-test-framework.html)",
+      "Bash(git commit -q -m 'Logo: new hexagon K–G monogram in vibrant brand gradient *)"
     ]
   }
 }

@@ -15,12 +15,14 @@
   <path d="M60 8 L105 34 L105 86 L60 112 L15 86 L15 34 Z"
         fill="#0c1016" stroke="url(#kgHex)" stroke-width="5" stroke-linejoin="round"/>
 
-  <g fill="none" stroke="url(#kgMono)" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" transform="translate(-7,0)">
-    <!-- K -->
+  <g fill="none" stroke="url(#kgMono)" stroke-width="8" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" transform="translate(-7,-9)">
     <path d="M46 33 V72"/>
     <path d="M46 52 L62 34"/>
     <path d="M46 52 L62 71"/>
-    <!-- G, angular with tongue -->
     <path d="M88 43 L75 36 L64 41 L61 53 L64 65 L75 70 L88 65 L88 54 L73 54"/>
   </g>
+
+  <text x="60" y="94" text-anchor="middle"
+        font-family="Sora, 'Segoe UI', Arial, sans-serif" font-size="10" font-weight="600"
+        letter-spacing="0.3" fill="url(#kgMono)">Kishore Gupta</text>
 </svg>
