@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Accessibility testing beyond the checklist — Kishore Gupta</title>
+  <meta name="description" content="Lessons from AVT and screen-reader testing on enterprise healthcare apps — where automated accessibility checks stop and human judgment begins." />
+  <link rel="canonical" href="https://kishoreguptaofficial.in/articles/accessibility-beyond-checklist.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:title" content="Accessibility testing beyond the checklist" />
+  <meta property="og:description" content="Where automated accessibility checks stop and human judgment begins." />
+  <meta property="og:image" content="https://kishoreguptaofficial.in/images/og-cover.png" />
+  <link rel="icon" href="../favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0c0e12" />
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try { var t = localStorage.getItem("theme"); if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t); } catch (e) {}
+    })();
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/tokens.css" />
+  <link rel="stylesheet" href="../css/styles.css" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Accessibility testing beyond the checklist",
+    "author": { "@type": "Person", "name": "Kishore Gupta", "url": "https://kishoreguptaofficial.in/" },
+    "publisher": { "@type": "Person", "name": "Kishore Gupta" },
+    "mainEntityOfPage": "https://kishoreguptaofficial.in/articles/accessibility-beyond-checklist.html",
+    "image": "https://kishoreguptaofficial.in/images/og-cover.png",
+    "articleSection": "Accessibility"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#article">Skip to content</a>
+
+  <header class="mini-header">
+    <div class="nav-inner">
+      <a href="../index.html" class="brand" aria-label="Kishore Gupta — home">
+        <img src="../images/logo.svg" alt="" class="brand-logo" width="40" height="40" />
+        <span class="brand-name">Kishore&nbsp;Gupta</span>
+      </a>
+      <div class="nav-actions">
+        <a href="../index.html#articles" class="nav-links" style="display:flex; font-size:var(--step--1); color:var(--text-muted);">All articles</a>
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="5.1" y1="5.1" x2="6.9" y2="6.9"/><line x1="17.1" y1="17.1" x2="18.9" y2="18.9"/><line x1="5.1" y1="18.9" x2="6.9" y2="17.1"/><line x1="17.1" y1="6.9" x2="18.9" y2="5.1"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="currentColor"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main id="article">
+    <div class="container">
+      <div class="article-hero">
+        <a href="../index.html#articles" class="back-link">← Back to articles</a>
+        <h1>Accessibility testing beyond the checklist</h1>
+        <div class="article-byline">
+          <span class="article-tag">Accessibility</span>
+          <span>By Kishore Gupta</span>
+          <span>·</span>
+          <span>7 min read</span>
+        </div>
+      </div>
+
+      <article class="prose">
+        <p>Run an automated accessibility scanner over almost any web app and you'll get a tidy list of violations: missing labels, low-contrast text, images without alt attributes. Fix them all and the tool turns green. It's a satisfying moment — and a misleading one, because automated checks catch only a fraction of what actually stands between a person and your product.</p>
+
+        <p>Having led accessibility testing on enterprise healthcare applications — the kind where a blocked screen genuinely stops someone from getting care — I've learned to treat the automated pass as the <strong>starting line, not the finish</strong>.</p>
+
+        <h2>What the tools do well</h2>
+        <p>Automated checks are excellent at the objective, machine-verifiable rules: contrast ratios, missing form labels, invalid ARIA, duplicate IDs, tab order that's structurally broken. Run them in CI and they'll stop a whole class of regressions before code review. You should absolutely automate this layer — it's fast, consistent, and free.</p>
+
+        <h2>Where they go quiet</h2>
+        <p>The gap is everything that requires <em>judgment</em>. A tool can confirm an image has alt text; it cannot tell you the alt text says <code>image123.png</code>. It can confirm a button has an accessible name; it cannot tell you that name is <code>"Click here"</code> three times on the same page. Meaning is not machine-checkable.</p>
+        <ul>
+          <li><strong>Is the alt text actually useful,</strong> or just present?</li>
+          <li><strong>Does the focus order tell a coherent story</strong> when you can't see the layout?</li>
+          <li><strong>Do error messages announce themselves,</strong> or do they appear silently for a sighted user only?</li>
+          <li><strong>Can you complete the core task</strong> — not just reach the controls — using only a keyboard and a screen reader?</li>
+        </ul>
+
+        <h2>Testing the way people actually use it</h2>
+        <p>This is where structured manual testing earns its place. Working through the AVT levels — from basic conformance to full assistive-technology validation — means putting the app through the same tools real users rely on. Turning off the monitor and driving a whole workflow with a screen reader is humbling the first time. Menus that "looked accessible" turn out to trap focus. A confirmation that flashed on screen never reaches the audio channel.</p>
+
+        <blockquote>Accessibility isn't a property you verify. It's an experience you have to live through.</blockquote>
+
+        <p>None of this replaces automation. The two are complementary: let the machines guard the objective rules on every commit, and spend human attention on the judgment calls they can't make. A checklist tells you the door has a handle. Only a person can tell you whether someone can actually walk through it.</p>
+
+        <h2>The mindset that matters</h2>
+        <p>For teams building for accessibility, my advice is simple: automate the measurable, and never let the green checkmark convince you the work is done. Quality — accessibility included — is a mindset, not a phase. The people on the other side of the screen are counting on us to test for the experience, not just the rules.</p>
+      </article>
+
+      <div class="article-foot">
+        <a href="../index.html#articles" class="back-link">← Back to articles</a>
+        <a href="../index.html#contact" class="article-link" style="border:0;background:none;">Get in touch</a>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Kishore Gupta. All rights reserved.</p>
+      <a href="../index.html" class="to-top">Back to portfolio ↑</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

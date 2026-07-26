@@ -84,8 +84,8 @@ ul { list-style: none; padding: 0; }
 .menu-toggle.active span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* Mobile menu drawer */
-.mobile-menu { position: fixed; top: 0; right: 0; height: 100dvh; width: min(78vw, 320px); background: var(--bg-elevated); border-left: 1px solid var(--border); z-index: 110; transform: translateX(100%); transition: transform var(--dur-mid) var(--ease-out); padding: 5rem var(--space-xl); }
-.mobile-menu.active { transform: translateX(0); }
+.mobile-menu { position: fixed; top: 0; right: 0; height: 100dvh; width: min(78vw, 320px); background: var(--bg-elevated); border-left: 1px solid var(--border); z-index: 110; transform: translateX(100%); visibility: hidden; transition: transform var(--dur-mid) var(--ease-out), visibility var(--dur-mid) var(--ease-out); padding: 5rem var(--space-xl); }
+.mobile-menu.active { transform: translateX(0); visibility: visible; }
 .mobile-menu nav { display: flex; flex-direction: column; gap: var(--space-md); }
 .mobile-menu a { font-family: var(--font-display); font-size: var(--step-2); color: var(--text-muted); }
 .mobile-menu a:hover { color: var(--accent); }
@@ -239,6 +239,30 @@ body.menu-open { overflow: hidden; }
 .footer-bottom { display: flex; justify-content: space-between; align-items: center; gap: var(--space-md); flex-wrap: wrap; border-top: 1px solid var(--border); padding-block: var(--space-lg); color: var(--text-dim); font-size: var(--step--1); }
 .to-top { color: var(--text-muted); transition: color var(--dur-fast); }
 .to-top:hover { color: var(--accent); }
+
+/* ============================================================
+   ARTICLE PAGE (prose)
+   ============================================================ */
+.article-hero { padding-block: var(--space-2xl) var(--space-lg); border-bottom: 1px solid var(--border); }
+.back-link { display: inline-flex; align-items: center; gap: 6px; font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-muted); margin-bottom: var(--space-lg); transition: color var(--dur-fast); }
+.back-link:hover { color: var(--accent); }
+.article-hero h1 { font-size: var(--step-4); max-width: 20ch; margin-bottom: var(--space-sm); }
+.article-byline { display: flex; flex-wrap: wrap; gap: var(--space-sm); align-items: center; font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); }
+.article-byline .article-tag { margin: 0; }
+.prose { max-width: var(--content-max); margin: var(--space-2xl) auto var(--space-3xl); font-size: var(--step-1); }
+.prose h2 { font-size: var(--step-2); margin: var(--space-xl) 0 var(--space-sm); }
+.prose h3 { font-size: var(--step-1); margin: var(--space-lg) 0 var(--space-xs); color: var(--accent); }
+.prose p { color: var(--text-muted); margin-bottom: var(--space-md); }
+.prose ul { margin: 0 0 var(--space-md); padding-left: 1.3em; }
+.prose li { list-style: disc; color: var(--text-muted); margin-bottom: var(--space-xs); }
+.prose strong { color: var(--text); }
+.prose blockquote { border-left: 3px solid var(--accent); padding: var(--space-xs) 0 var(--space-xs) var(--space-md); margin: var(--space-lg) 0; color: var(--text); font-style: italic; }
+.prose code { font-family: var(--font-mono); font-size: 0.85em; background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-xs); padding: 0.1em 0.4em; color: var(--accent); }
+.article-foot { max-width: var(--content-max); margin: 0 auto var(--space-3xl); padding-top: var(--space-lg); border-top: 1px solid var(--border); display: flex; justify-content: space-between; flex-wrap: wrap; gap: var(--space-md); }
+.mini-header { position: sticky; top: 0; z-index: 100; background: color-mix(in srgb, var(--bg) 88%, transparent); backdrop-filter: blur(12px); border-bottom: 1px solid var(--border); }
+.article-link { display: inline-flex; align-items: center; gap: 4px; font-weight: var(--weight-semibold); font-size: var(--step--1); color: var(--accent); }
+.article-link::after { content: "→"; transition: transform var(--dur-fast); }
+.article-card:hover .article-link::after { transform: translateX(3px); }
 
 /* ============================================================
    SCROLL REVEAL

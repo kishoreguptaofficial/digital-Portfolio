@@ -136,7 +136,10 @@
         </div>
         <div class="about-grid">
           <div class="about-media reveal">
-            <img src="images/profile.jpg" alt="Portrait of Kishore Gupta" width="420" height="520" loading="lazy" />
+            <picture>
+              <source srcset="images/profile.webp" type="image/webp" />
+              <img src="images/profile-opt.jpg" alt="Portrait of Kishore Gupta" width="420" height="520" loading="lazy" decoding="async" />
+            </picture>
           </div>
           <div class="about-body reveal">
             <p>What started as curiosity — understanding how systems work and why they sometimes fail — gradually evolved into a passion for building reliable, high-quality software. Early in my career, I was driven by the challenge of finding issues, but over time, that mindset transformed into creating solutions that prevent them.</p>
@@ -327,18 +330,18 @@
         <p class="section-lead reveal">Notes on testing, automation, and quality strategy. More coming soon.</p>
 
         <div class="articles-grid">
-          <article class="article-card reveal">
+          <a class="article-card reveal" href="articles/scaling-test-framework.html">
             <span class="article-tag">Automation</span>
             <h3>Designing a test framework that scales with the team</h3>
             <p>Why maintainability beats coverage numbers, and how to structure a framework that new engineers can contribute to on day one.</p>
-            <span class="article-soon">Draft — coming soon</span>
-          </article>
-          <article class="article-card reveal">
+            <span class="article-link">Read article</span>
+          </a>
+          <a class="article-card reveal" href="articles/accessibility-beyond-checklist.html">
             <span class="article-tag">Accessibility</span>
             <h3>Accessibility testing beyond the checklist</h3>
-            <p>Lessons from AVT1–3 and screen-reader testing on enterprise healthcare apps — where automated checks stop and judgment begins.</p>
-            <span class="article-soon">Draft — coming soon</span>
-          </article>
+            <p>Lessons from AVT and screen-reader testing on enterprise healthcare apps — where automated checks stop and judgment begins.</p>
+            <span class="article-link">Read article</span>
+          </a>
         </div>
       </div>
     </section>

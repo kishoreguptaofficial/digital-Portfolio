@@ -29,7 +29,14 @@
       "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:4321/css/styles.css)",
       "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:4321/js/main.js)",
       "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"Phase 2-3: full semantic rebuild — nav, hero, about, timeline, projects+filters, skills, articles, contact, footer\")",
-      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"docs: update changelog and status through Phase 3\")"
+      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"docs: update changelog and status through Phase 3\")",
+      "Bash(command -v magick convert cwebp)",
+      "Bash(node -e \"try{require\\('sharp'\\);console.log\\('sharp: yes'\\)}catch\\(e\\){console.log\\('sharp: no'\\)}\")",
+      "Bash(timeout 200 npm install sharp --no-save --no-audit --no-fund)",
+      "Bash(node -e \"try{require\\('sharp'\\);console.log\\('sharp READY'\\)}catch\\(e\\){console.log\\('sharp FAIL'\\)}\")",
+      "Bash(node \"C:/Users/gupta/AppData/Local/Temp/claude/C--Users-gupta-Desktop-Digital-Portfolio-Claude/86da71fb-bfd6-4aa3-997e-b1416173c3a5/scratchpad/genimg.js\")",
+      "Bash(export NODE_PATH=\"C:/Users/gupta/Desktop/Digital Portfolio Claude/node_modules\")",
+      "Bash(git -c 'user.name=Kishore Gupta' -c user.email=swagatmohapatra1994@gmail.com commit -q -m 'Phase 4-7: articles + 404 + image optimization + SEO files + GitHub Pages deploy prep *)"
     ]
   }
 }
