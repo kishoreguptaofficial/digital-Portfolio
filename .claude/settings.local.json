@@ -15,7 +15,20 @@
       "Bash(git add *)",
       "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"Phase 0: baseline of live site \\(reconstructed from kishoreguptaofficial.in\\)\")",
       "Bash(grep -oiE '#[0-9a-f]{3,6}' style.css)",
-      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"Phase 1: design system — tokens + styleguide \\(warm-ink dark, emerald accent, light mode\\)\")"
+      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"Phase 1: design system — tokens + styleguide \\(warm-ink dark, emerald accent, light mode\\)\")",
+      "Bash(py --version)",
+      "Bash(npx --version)",
+      "Bash(npx --yes serve -l 4321 .)",
+      "Bash(curl -s -o /dev/null -w \"localhost:4321 -> HTTP %{http_code}\\\\n\" http://localhost:4321/)",
+      "Read(//tmp/**)",
+      "Bash(mkdir -p \"C:/Users/gupta/AppData/Roaming/npm\")",
+      "Read(//c/Users/gupta/AppData/Roaming/**)",
+      "Bash(pkill -f \"server.js\")",
+      "Bash(node C:/Users/gupta/AppData/Local/Temp/claude/C--Users-gupta-Desktop-Digital-Portfolio-Claude/86da71fb-bfd6-4aa3-997e-b1416173c3a5/scratchpad/server.js 'C:/Users/gupta/Desktop/Digital Portfolio Claude')",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:4321/)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:4321/css/styles.css)",
+      "Bash(curl -s -o /dev/null -w '%{http_code}' http://localhost:4321/js/main.js)",
+      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"Phase 2-3: full semantic rebuild — nav, hero, about, timeline, projects+filters, skills, articles, contact, footer\")"
     ]
   }
 }

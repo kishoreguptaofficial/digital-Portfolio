@@ -1,920 +1,447 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kishore Gupta Portfolio</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>Kishore Gupta — QA Lead & Automation Engineer</title>
+  <meta name="description" content="Kishore Gupta is a QA Lead with 10+ years building scalable test automation and reliability across healthcare, banking, insurance, and manufacturing systems." />
+  <meta name="author" content="Kishore Gupta" />
+  <link rel="canonical" href="https://kishoreguptaofficial.in/" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kishoreguptaofficial.in/" />
+  <meta property="og:title" content="Kishore Gupta — QA Lead & Automation Engineer" />
+  <meta property="og:description" content="I build quality into software. 10+ years of scalable test automation and reliability across web, API, and cloud." />
+  <meta property="og:image" content="https://kishoreguptaofficial.in/images/og-cover.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Kishore Gupta — QA Lead & Automation Engineer" />
+  <meta name="twitter:description" content="I build quality into software. 10+ years of scalable test automation and reliability." />
+  <meta name="twitter:image" content="https://kishoreguptaofficial.in/images/og-cover.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+  <meta name="theme-color" content="#0c0e12" />
+
+  <!-- Set theme before paint to avoid flash -->
+  <script>
+    (function () {
+      document.documentElement.classList.add("js");
+      try {
+        var t = localStorage.getItem("theme");
+        if (t === "light" || t === "dark") document.documentElement.setAttribute("data-theme", t);
+      } catch (e) {}
+    })();
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+
+  <!-- JSON-LD Person schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Kishore Gupta",
+    "jobTitle": "QA Lead & Automation Engineer",
+    "url": "https://kishoreguptaofficial.in/",
+    "sameAs": ["https://www.linkedin.com/in/kishoreguptaofficial/"],
+    "knowsAbout": ["Test Automation", "Selenium", "API Testing", "CI/CD", "Accessibility Testing", "AWS", "Quality Strategy"],
+    "description": "QA Lead with 10+ years building scalable test frameworks and reliability across healthcare, banking, insurance, and manufacturing."
+  }
+  </script>
 </head>
 
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-<header>
-  <nav class="navbar">
-
-    <div class="navbar-container">
-
-      <!-- LEFT: LOGO -->
-      <div class="nav-left">
-        <div class="logo-container">
-          <img src="images/logo.svg" class="logo-img" alt="Logo">
-        </div>
-      </div>
-
-      <!-- CENTER: SEARCH -->
-      <div class="nav-center">
-        <div class="search-container">
-          <div class="nav-search">
-            <i class="fas fa-search" id="searchBtn"></i>
-            <input type="text" id="searchInput" placeholder="Search..." />
-            <i class="fas fa-times clear-btn" id="clearBtn"></i>
-          </div>
-          <div class="search-feedback" id="searchFeedback"></div>        
-        </div>
-      </div>
-
-      <!-- RIGHT: NAV LINKS -->
-      <div class="nav-right">
-        <ul class="nav-links">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#articles">Articles</a></li>
-        </ul>
-
-        <!-- HAMBURGER -->
-        <div class="menu-toggle" id="menu-toggle">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-      </div>
-
-    </div>
-
-  </nav>
-
-  <!-- SIDE MENU -->
-  <div class="side-menu" id="side-menu">
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#articles">Articles</a></li>
-    </ul>
-  </div>
-</header>
-
-<div class="menu-overlay" id="menu-overlay"></div>
-
-<!-- Hero Section -->
-  <section id="home" class="hero section">
-
-    <h1>Hi, I am Kishore Gupta</h1>
-    <h2>This is my digital portfolio</h2>
-    <p class="description">
-      I build quality into software. With 10+ years of experience in automation and testing, I specialize in creating scalable test frameworks and ensuring reliability across modern web, API, and cloud applications.
-    </p>
-    <div class="hero-btn">
-      <a href="Kishore_Gupta_Resume.pdf" download class="send-btn resume-btn">
-        Download My Resume
+  <!-- ================= HEADER / NAV ================= -->
+  <header class="site-header" id="siteHeader">
+    <div class="nav-inner">
+      <a href="#home" class="brand" aria-label="Kishore Gupta — home">
+        <img src="images/logo.svg" alt="" class="brand-logo" width="40" height="40" />
+        <span class="brand-name">Kishore&nbsp;Gupta</span>
       </a>
+
+      <nav class="nav-links" aria-label="Primary">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="5.1" y1="5.1" x2="6.9" y2="6.9"/><line x1="17.1" y1="17.1" x2="18.9" y2="18.9"/><line x1="5.1" y1="18.9" x2="6.9" y2="17.1"/><line x1="17.1" y1="6.9" x2="18.9" y2="5.1"/></g></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="currentColor"/></svg>
+        </button>
+
+        <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
     </div>
-     
-  </section>
+  </header>
 
-  <!-- Move to Top Chevron -->
-  <a href="#" class="back-to-top" id="backToTop">
-    <span class="tooltip">Move to Top</span>
-
-    <svg id="arrowIcon" width="22" height="22" viewBox="0 0 24 24">
-      <path d="M6 14L12 8L18 14" stroke="#64ffda" stroke-width="2.5" stroke-linecap="round"/>
-    </svg>
-  </a>
-
-  <!-- About Section -->
-  <section id="about" class="about-section section">
-    <h2 class="about-title reveal">About Me</h2>
-    <div class="about-wrapper">
-
-      <!-- PROFILE IMAGE -->
-      <div class="about-image reveal">
-        <img src="images/profile.jpg" alt="Kishore Gupta">
-      </div>
-
-      <!-- ABOUT TEXT -->
-      <div class="about-text reveal">       
-
-        <p>
-          What started as curiosity — understanding how systems work and why they sometimes fail — gradually evolved into a passion for building reliable, high-quality software. Early in my career, I was driven by the challenge of finding issues, but over time, that mindset transformed into creating solutions that prevent them.
-        </p>
-        <p>
-          Over the past 10+ years, I’ve grown from learning the fundamentals of testing to leading automation initiatives and defining quality strategies across complex, enterprise-scale systems. I’ve had the opportunity to work across diverse domains like healthcare, banking, and manufacturing, gaining hands-on experience in web, API, and cloud-based applications.
-        </p>
-        <p>
-          Throughout this journey, I’ve continuously pushed myself to evolve — from writing manual test cases to building scalable automation frameworks, integrating them into CI/CD pipelines, and ensuring consistent, reliable test coverage. Each project has strengthened my ability to think critically, adapt quickly, and deliver solutions that add real value to the product and the team.
-        </p>
-        <p>
-          Today, as a QA Lead, my role goes beyond testing. I focus on mentoring teams, driving best practices, improving processes, and aligning quality with business goals. I enjoy collaborating with cross-functional teams, solving complex problems, and creating systems that teams can trust with confidence.
-        </p>
-        <p>
-          For me, testing is not just about finding defects — it’s about building confidence, ensuring reliability, and contributing to products that create meaningful impact. I believe quality is not a phase, but a mindset that drives everything I do.
-        </p>
-      </div>
-        
-    </div>
-
-  </section>
-
-  <!-- Projects Section -->
-    <section id="projects" class="section">
-
-  <div class="projects-container">
-
-    <h2 class="projects-title">Projects</h2>
-    <p class="projects-subtitle">
-      Real-world enterprise projects I’ve contributed to across domains like Manufacturing, Healthcare, Banking, Insurance, and data platforms throughout my journey.
-    </p>
-
-    <div class="projects-grid">
-
-      <!-- 1 -->
-      <div class="project-card">
-        <h3>BCM – Automation Team</h3>
-        <span class="project-meta">Healthcare | QA Lead | 2025 – Present</span>
-        <p>
-          Automation team responsible for automating feasible manual testing tasks across modules to improve regression stability and coverage.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Led and mentored automation engineers</li>
-            <li>Improved regression stability and coverage</li>
-            <li>Integrated automation with Jenkins & GitHub Actions</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>Selenium</span><span>AWS</span><span>Jenkins</span><span>JIRA</span>
-        </div>
-      </div>
-
-      <!-- 2 -->
-      <div class="project-card">
-        <h3>BlueCard RTM Alerts</h3>
-        <span class="project-meta">Healthcare | QA Lead | 2024</span>
-        <p>
-          Real-time messaging system enabling communication across healthcare systems with API and cloud validation.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Created and executed 180+ test cases</li>
-            <li>Identified and tracked 40+ defects</li>
-            <li>Performed API and AWS-based validation</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>API Testing</span><span>Postman</span><span>AWS</span>
-        </div>
-      </div>
-
-      <!-- 3 -->
-      <div class="project-card">
-        <h3>AHRW – Adhoc Report Writer</h3>
-        <span class="project-meta">Healthcare | QA Lead | 2023</span>
-        <p>
-          Healthcare analytics platform enabling advanced querying and reporting.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Built 80+ regression test cases</li>
-            <li>Automated 48 business scenarios</li>
-            <li>Maintained regression suite across releases</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>Python</span><span>Automation</span><span>Data Testing</span>
-        </div>
-      </div>
-
-      <!-- 4 -->
-      <div class="project-card">
-        <h3>Watson Care Manager (WCM)</h3>
-        <span class="project-meta">Healthcare | QA Lead | 2023</span>
-        <p>
-          Accessibility testing project ensuring compliance across healthcare web applications.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Tested 50+ web pages</li>
-            <li>Executed AVT1, AVT2, AVT3 testing</li>
-            <li>Validated accessibility using assistive tools</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>Accessibility</span><span>IBM Tools</span><span>JAWS</span>
-        </div>
-      </div>
-
-      <!-- 5 -->
-      <div class="project-card">
-        <h3>Healthcare Record Ingestion (HRI)</h3>
-        <span class="project-meta">Healthcare | QA Lead | 2022–2023</span>
-        <p>
-          API validation and automation for healthcare data ingestion pipelines.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Automated 250+ API test cases</li>
-            <li>Used BDD framework for validation</li>
-            <li>Ensured end-to-end API reliability</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>Ruby</span><span>API Automation</span><span>Postman</span>
-        </div>
-      </div>
-
-      <!-- 6 -->
-      <div class="project-card">
-        <h3>Open Data API</h3>
-        <span class="project-meta">Banking | Tester | 2021–2022</span>
-        <p>
-          API validation and automation ensuring accurate response handling across endpoints.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Automated API response validation</li>
-            <li>Created endpoint-level test scenarios</li>
-            <li>Performed defect tracking and analysis</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>Gauge</span><span>Postman</span><span>JIRA</span>
-        </div>
-      </div>
-
-      <!-- 7 -->
-      <div class="project-card hidden-project">
-        <h3>PayFlex – Member Web Portal</h3>
-        <span class="project-meta">Healthcare | Test Analyst | 2019–2021</span>
-        <p>
-          Functional and automation testing for healthcare member portal with continuous regression validation.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Automated regression scenarios</li>
-            <li>Executed daily test suites</li>
-            <li>Collaborated with onsite/offshore teams</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>Selenium</span><span>TFS</span><span>Eclipse</span>
-        </div>
-      </div>
-
-      <!-- 8 -->
-      <div class="project-card hidden-project">
-        <h3>Venerable Task Manager</h3>
-        <span class="project-meta">Insurance | Test Engineer | 2018–2019</span>
-        <p>
-          Data migration testing ensuring accuracy and integrity of financial data transfer.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Built validation tools using VB scripting</li>
-            <li>Performed database comparison testing</li>
-            <li>Ensured data integrity post-migration</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>SQL</span><span>QTP</span><span>VB Script</span>
-        </div>
-      </div>
-
-      <!-- 9 -->
-      <div class="project-card hidden-project">
-        <h3>Launch Execution Dashboard (Apple)</h3>
-        <span class="project-meta">Manufacturing | Test Engineer | 2017–2018</span>
-        <p>
-          Data migration and ETL validation from Vertica to SAP HANA including reporting validation.
-        </p>
-        <button class="impact-toggle">View Impact</button>
-        <div class="project-impact">
-          <ul>
-            <li>Automated data validation using Python</li>
-            <li>Performed ETL and SQL testing</li>
-            <li>Validated Tableau dashboards</li>
-          </ul>
-        </div>
-        <div class="tech-stack">
-          <span>Python</span><span>SQL</span><span>HANA</span><span>Selenium</span>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- VIEW MORE BUTTON -->
-    <div class="view-more-container">
-      <button id="viewMoreBtn">View More Projects</button>
-    </div>
-
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <nav aria-label="Mobile">
+      <a href="#about">About</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#articles">Articles</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </div>
+  <div class="menu-overlay" id="menuOverlay"></div>
 
-</section>
+  <main id="main">
 
-
-  <!-- CONTACT SECTION -->  
-  <section id="contact" class="section">
-
-      <!-- HEADER -->
-      <div class="contact-header">
-        <h2>Contact Me</h2>
-        <p>
-          Feel free to reach out — I am always open to meaningful conversations and new opportunities.
+    <!-- ================= HERO ================= -->
+    <section id="home" class="hero">
+      <div class="container hero-inner">
+        <p class="kicker reveal">QA Lead · Automation · 10+ years</p>
+        <h1 class="hero-title reveal">Hi, I am Kishore Gupta</h1>
+        <p class="hero-tagline reveal">I build <span class="grad-text">quality</span> into software.</p>
+        <p class="hero-desc reveal">
+          With 10+ years in automation and testing, I design scalable test frameworks and ensure
+          reliability across modern web, API, and cloud applications — across healthcare, banking,
+          insurance, and manufacturing.
         </p>
-      </div>
-
-      <!-- GRID -->
-      <div class="contact-grid">
-
-        <!-- LEFT COLUMN -->
-        <div class="contact-left">
-         
-          
-          <!-- ================= EMAIL ================= -->
-          <div class="info-item">
-            <i class="fas fa-envelope"></i>
-
-            <span class="reveal-text" id="emailText">
-              Click to view email
-            </span>
-
-            <div class="copy-wrapper">
-              <button class="copy-btn disabled" id="emailCopy">
-                <i class="fas fa-copy"></i>
-              </button>
-              <span class="copy-label" id="emailLabel">Copy</span>
-            </div>
-          </div>
-
-
-          <!-- ================= PHONE ================= -->
-          <div class="info-item">
-            <i class="fas fa-phone-alt"></i>
-
-            <span class="reveal-text" id="phoneText">
-              Click to view number
-            </span>
-
-            <div class="copy-wrapper">
-              <button class="copy-btn disabled" id="phoneCopy">
-                <i class="fas fa-copy"></i>
-              </button>
-              <span class="copy-label" id="phoneLabel">Copy</span>
-            </div>
-          </div>
-
-          <div class="info-item">
-            <i class="fas fa-location-dot"></i>
-            <span>India</span>
-          </div>
-
-          <!-- SOCIAL ICONS -->
-          <div class="social-icons">
-            <a href="#"><i class="fab fa-github"></i></a>
-            <a href="https://www.linkedin.com/in/kishoreguptaofficial/">
-              <i class="fab fa-linkedin-in"></i>
-            </a>
-          </div>
-
-          <!-- WHATSAPP BUTTON -->
-          <a href="https://wa.me/917022466118" target="_blank" class="whatsapp-btn">
-            <i class="fab fa-whatsapp"></i> Chat on WhatsApp
+        <div class="hero-btns reveal">
+          <a href="Kishore_Gupta_Resume.pdf" download class="btn btn-primary">
+            Download My Resume
+            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
-
+          <a href="#projects" class="btn btn-secondary">View projects</a>
         </div>
-
-        <!-- RIGHT COLUMN -->
-        <div class="contact-right">
-
-          <form id="contact-form">
-
-            <div class="input-group">
-              <input type="text" name="user_name" required placeholder=" ">
-              <label>Enter Your Name</label>
-            </div>
-
-            <div class="input-group">
-              <input type="email" name="user_email" required placeholder=" ">
-              <label>Enter Your Email</label>
-            </div>
-
-            <div class="input-group message-box">
-              <textarea name="message" rows="5" required placeholder=" "></textarea>
-              <label>Enter Your Message</label>
-            </div>
-
-            <div class="form-actions">
-              <button type="submit" class="send-btn">
-                <span id="btn-text">Send Message</span>
-                <span id="loader" class="loader"></span>
-              </button>
-              <span id="msg"></span>
-            </div>
-
-          </form>
-
-        </div>
-
       </div>
+    </section>
 
-  </section>
-
-  <!-- FOOTER SECTION -->
-  <footer class="footer">
-
-        <div class="footer-container">
-
-          <!-- TOP: BRAND -->
-          <div class="footer-brand">
-            <img src="images/logo.svg" alt="Logo" class="footer-logo">
-            <p>Building digital portfolio and modern digital experiences.</p>
+    <!-- ================= ABOUT ================= -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-idx">01</span>
+          <h2 class="section-title">About me</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-media reveal">
+            <img src="images/profile.jpg" alt="Portrait of Kishore Gupta" width="420" height="520" loading="lazy" />
           </div>
-
-          <!-- LINKS GRID -->
-          <div class="footer-grid">
-
-            <div class="footer-col">
-              <h4>Company</h4>
-              <a href="#about">About</a>
-              <a href="#">Careers</a>
-              <a href="#articles">Articles</a>
-            </div>
-
-            <div class="footer-col">
-              <h4>Services</h4>
-              <a href="#projects">Web Development</a>
-              <a href="#projects">Automation</a>
-              <a href="#projects">Cloud</a>
-            </div>
-
-            <div class="footer-col">
-              <h4>Resources</h4>
-              <a href="#projects">Projects</a>
-              <a href="#">Blogs</a>
-              <a href="#contact">Contact</a>
-            </div>
-
-            <div class="footer-col">
-              <h4>Support</h4>
-              <a href="#">Help Center</a>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms</a>
-            </div>
-
+          <div class="about-body reveal">
+            <p>What started as curiosity — understanding how systems work and why they sometimes fail — gradually evolved into a passion for building reliable, high-quality software. Early in my career, I was driven by the challenge of finding issues, but over time, that mindset transformed into creating solutions that prevent them.</p>
+            <p>Over the past 10+ years, I've grown from learning the fundamentals of testing to leading automation initiatives and defining quality strategies across complex, enterprise-scale systems. I've had the opportunity to work across diverse domains like healthcare, banking, and manufacturing, gaining hands-on experience in web, API, and cloud-based applications.</p>
+            <p>Throughout this journey, I've continuously pushed myself to evolve — from writing manual test cases to building scalable automation frameworks, integrating them into CI/CD pipelines, and ensuring consistent, reliable test coverage. Each project has strengthened my ability to think critically, adapt quickly, and deliver solutions that add real value to the product and the team.</p>
+            <p>Today, as a QA Lead, my role goes beyond testing. I focus on mentoring teams, driving best practices, improving processes, and aligning quality with business goals. I enjoy collaborating with cross-functional teams, solving complex problems, and creating systems that teams can trust with confidence.</p>
+            <p>For me, testing is not just about finding defects — it's about building confidence, ensuring reliability, and contributing to products that create meaningful impact. I believe quality is not a phase, but a mindset that drives everything I do.</p>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <!-- BOTTOM -->
-          <div class="footer-bottom">
+    <!-- ================= EXPERIENCE TIMELINE ================= -->
+    <section id="experience" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-idx">02</span>
+          <h2 class="section-title">Experience</h2>
+        </div>
+        <p class="section-lead reveal">A decade of testing, from engineer to lead — across manufacturing, insurance, banking, and healthcare.</p>
 
-            <div class="footer-social">
-              <a href="#"><i class="fab fa-github"></i></a>
-              <a href="https://www.linkedin.com/in/kishoreguptaofficial/"><i class="fab fa-linkedin"></i></a>
-              <a href="#"><i class="fab fa-twitter"></i></a>
-            </div>
+        <ol class="timeline">
+          <li class="tl-item reveal"><span class="tl-year">2025 — Present</span><div class="tl-card"><h3>QA Lead — BCM Automation Team</h3><span class="tl-meta">Healthcare</span><p>Leading an automation team, mentoring engineers, and improving regression stability and coverage across modules.</p></div></li>
+          <li class="tl-item reveal"><span class="tl-year">2024</span><div class="tl-card"><h3>QA Lead — BlueCard RTM Alerts</h3><span class="tl-meta">Healthcare</span><p>Real-time messaging validation across healthcare systems with API and AWS cloud testing.</p></div></li>
+          <li class="tl-item reveal"><span class="tl-year">2023</span><div class="tl-card"><h3>QA Lead — AHRW &amp; Watson Care Manager</h3><span class="tl-meta">Healthcare</span><p>Analytics reporting automation and accessibility compliance (AVT1–3) across healthcare web apps.</p></div></li>
+          <li class="tl-item reveal"><span class="tl-year">2022 — 2023</span><div class="tl-card"><h3>QA Lead — Healthcare Record Ingestion</h3><span class="tl-meta">Healthcare</span><p>Automated 250+ API test cases with a BDD framework for data-ingestion pipelines.</p></div></li>
+          <li class="tl-item reveal"><span class="tl-year">2021 — 2022</span><div class="tl-card"><h3>Tester — Open Data API</h3><span class="tl-meta">Banking</span><p>API response validation and endpoint-level test automation with Gauge and Postman.</p></div></li>
+          <li class="tl-item reveal"><span class="tl-year">2019 — 2021</span><div class="tl-card"><h3>Test Analyst — PayFlex Member Portal</h3><span class="tl-meta">Healthcare</span><p>Functional and Selenium automation testing with daily regression across onsite/offshore teams.</p></div></li>
+          <li class="tl-item reveal"><span class="tl-year">2018 — 2019</span><div class="tl-card"><h3>Test Engineer — Venerable Task Manager</h3><span class="tl-meta">Insurance</span><p>Data-migration and database comparison testing to ensure financial data integrity.</p></div></li>
+          <li class="tl-item reveal"><span class="tl-year">2017 — 2018</span><div class="tl-card"><h3>Test Engineer — Launch Execution Dashboard (Apple)</h3><span class="tl-meta">Manufacturing</span><p>ETL and SQL validation from Vertica to SAP HANA, plus Tableau dashboard verification.</p></div></li>
+        </ol>
+      </div>
+    </section>
 
-            <p>© 2026 Kishore Gupta. All Rights Reserved.</p>
+    <!-- ================= PROJECTS ================= -->
+    <section id="projects" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-idx">03</span>
+          <h2 class="section-title">Projects</h2>
+        </div>
+        <p class="section-lead reveal">Real-world enterprise projects across manufacturing, healthcare, banking, insurance, and data platforms.</p>
 
-          </div>
-
+        <!-- Filters -->
+        <div class="filters reveal" role="group" aria-label="Filter projects by domain">
+          <span class="filter-label">Domain</span>
+          <button class="filter" data-filter-type="domain" data-value="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter-type="domain" data-value="Healthcare" aria-pressed="false">Healthcare</button>
+          <button class="filter" data-filter-type="domain" data-value="Banking" aria-pressed="false">Banking</button>
+          <button class="filter" data-filter-type="domain" data-value="Insurance" aria-pressed="false">Insurance</button>
+          <button class="filter" data-filter-type="domain" data-value="Manufacturing" aria-pressed="false">Manufacturing</button>
+        </div>
+        <div class="filters reveal" role="group" aria-label="Filter projects by role">
+          <span class="filter-label">Role</span>
+          <button class="filter" data-filter-type="role" data-value="all" aria-pressed="true">All</button>
+          <button class="filter" data-filter-type="role" data-value="QA Lead" aria-pressed="false">QA Lead</button>
+          <button class="filter" data-filter-type="role" data-value="Test Analyst" aria-pressed="false">Test Analyst</button>
+          <button class="filter" data-filter-type="role" data-value="Tester" aria-pressed="false">Tester</button>
+          <button class="filter" data-filter-type="role" data-value="Test Engineer" aria-pressed="false">Test Engineer</button>
         </div>
 
+        <p class="filter-empty" id="filterEmpty" hidden>No projects match those filters.</p>
+
+        <div class="projects-grid" id="projectsGrid">
+
+          <article class="project-card reveal" data-domain="Healthcare" data-role="QA Lead">
+            <div class="project-top"><span class="project-domain">Healthcare</span><span class="project-year">2025 — Present</span></div>
+            <h3>BCM — Automation Team</h3>
+            <span class="project-role">QA Lead</span>
+            <p>Automation team responsible for automating feasible manual testing tasks across modules to improve regression stability and coverage.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Led and mentored automation engineers</li><li>Improved regression stability and coverage</li><li>Integrated automation with Jenkins &amp; GitHub Actions</li></ul></div>
+            <div class="tech-stack"><span class="tag">Selenium</span><span class="tag">AWS</span><span class="tag">Jenkins</span><span class="tag">JIRA</span></div>
+          </article>
+
+          <article class="project-card reveal" data-domain="Healthcare" data-role="QA Lead">
+            <div class="project-top"><span class="project-domain">Healthcare</span><span class="project-year">2024</span></div>
+            <h3>BlueCard RTM Alerts</h3>
+            <span class="project-role">QA Lead</span>
+            <p>Real-time messaging system enabling communication across healthcare systems with API and cloud validation.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Created and executed 180+ test cases</li><li>Identified and tracked 40+ defects</li><li>Performed API and AWS-based validation</li></ul></div>
+            <div class="tech-stack"><span class="tag">API Testing</span><span class="tag">Postman</span><span class="tag">AWS</span></div>
+          </article>
+
+          <article class="project-card reveal" data-domain="Healthcare" data-role="QA Lead">
+            <div class="project-top"><span class="project-domain">Healthcare</span><span class="project-year">2023</span></div>
+            <h3>AHRW — Adhoc Report Writer</h3>
+            <span class="project-role">QA Lead</span>
+            <p>Healthcare analytics platform enabling advanced querying and reporting.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Built 80+ regression test cases</li><li>Automated 48 business scenarios</li><li>Maintained regression suite across releases</li></ul></div>
+            <div class="tech-stack"><span class="tag">Python</span><span class="tag">Automation</span><span class="tag">Data Testing</span></div>
+          </article>
+
+          <article class="project-card reveal" data-domain="Healthcare" data-role="QA Lead">
+            <div class="project-top"><span class="project-domain">Healthcare</span><span class="project-year">2023</span></div>
+            <h3>Watson Care Manager (WCM)</h3>
+            <span class="project-role">QA Lead</span>
+            <p>Accessibility testing project ensuring compliance across healthcare web applications.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Tested 50+ web pages</li><li>Executed AVT1, AVT2, AVT3 testing</li><li>Validated accessibility using assistive tools</li></ul></div>
+            <div class="tech-stack"><span class="tag">Accessibility</span><span class="tag">IBM Tools</span><span class="tag">JAWS</span></div>
+          </article>
+
+          <article class="project-card reveal" data-domain="Healthcare" data-role="QA Lead">
+            <div class="project-top"><span class="project-domain">Healthcare</span><span class="project-year">2022 — 2023</span></div>
+            <h3>Healthcare Record Ingestion (HRI)</h3>
+            <span class="project-role">QA Lead</span>
+            <p>API validation and automation for healthcare data ingestion pipelines.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Automated 250+ API test cases</li><li>Used BDD framework for validation</li><li>Ensured end-to-end API reliability</li></ul></div>
+            <div class="tech-stack"><span class="tag">Ruby</span><span class="tag">API Automation</span><span class="tag">Postman</span></div>
+          </article>
+
+          <article class="project-card reveal" data-domain="Banking" data-role="Tester">
+            <div class="project-top"><span class="project-domain">Banking</span><span class="project-year">2021 — 2022</span></div>
+            <h3>Open Data API</h3>
+            <span class="project-role">Tester</span>
+            <p>API validation and automation ensuring accurate response handling across endpoints.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Automated API response validation</li><li>Created endpoint-level test scenarios</li><li>Performed defect tracking and analysis</li></ul></div>
+            <div class="tech-stack"><span class="tag">Gauge</span><span class="tag">Postman</span><span class="tag">JIRA</span></div>
+          </article>
+
+          <article class="project-card reveal" data-domain="Healthcare" data-role="Test Analyst">
+            <div class="project-top"><span class="project-domain">Healthcare</span><span class="project-year">2019 — 2021</span></div>
+            <h3>PayFlex — Member Web Portal</h3>
+            <span class="project-role">Test Analyst</span>
+            <p>Functional and automation testing for healthcare member portal with continuous regression validation.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Automated regression scenarios</li><li>Executed daily test suites</li><li>Collaborated with onsite/offshore teams</li></ul></div>
+            <div class="tech-stack"><span class="tag">Selenium</span><span class="tag">TFS</span><span class="tag">Eclipse</span></div>
+          </article>
+
+          <article class="project-card reveal" data-domain="Insurance" data-role="Test Engineer">
+            <div class="project-top"><span class="project-domain">Insurance</span><span class="project-year">2018 — 2019</span></div>
+            <h3>Venerable Task Manager</h3>
+            <span class="project-role">Test Engineer</span>
+            <p>Data migration testing ensuring accuracy and integrity of financial data transfer.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Built validation tools using VB scripting</li><li>Performed database comparison testing</li><li>Ensured data integrity post-migration</li></ul></div>
+            <div class="tech-stack"><span class="tag">SQL</span><span class="tag">QTP</span><span class="tag">VB Script</span></div>
+          </article>
+
+          <article class="project-card reveal" data-domain="Manufacturing" data-role="Test Engineer">
+            <div class="project-top"><span class="project-domain">Manufacturing</span><span class="project-year">2017 — 2018</span></div>
+            <h3>Launch Execution Dashboard (Apple)</h3>
+            <span class="project-role">Test Engineer</span>
+            <p>Data migration and ETL validation from Vertica to SAP HANA including reporting validation.</p>
+            <button class="impact-toggle" type="button" aria-expanded="false">View impact</button>
+            <div class="project-impact"><ul><li>Automated data validation using Python</li><li>Performed ETL and SQL testing</li><li>Validated Tableau dashboards</li></ul></div>
+            <div class="tech-stack"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">HANA</span><span class="tag">Selenium</span></div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SKILLS ================= -->
+    <section id="skills" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-idx">04</span>
+          <h2 class="section-title">Skills</h2>
+        </div>
+        <p class="section-lead reveal">The tools and disciplines I use to build quality in — from framework design to CI/CD and accessibility.</p>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal"><h3>Automation</h3><div class="chips"><span class="tag">Selenium</span><span class="tag">Python</span><span class="tag">Ruby</span><span class="tag">Gauge</span><span class="tag">BDD</span></div></div>
+          <div class="skill-group reveal"><h3>API</h3><div class="chips"><span class="tag">Postman</span><span class="tag">REST</span></div></div>
+          <div class="skill-group reveal"><h3>CI / CD</h3><div class="chips"><span class="tag">Jenkins</span><span class="tag">GitHub Actions</span></div></div>
+          <div class="skill-group reveal"><h3>Cloud</h3><div class="chips"><span class="tag">AWS</span></div></div>
+          <div class="skill-group reveal"><h3>Data</h3><div class="chips"><span class="tag">SQL</span><span class="tag">HANA</span><span class="tag">Tableau</span><span class="tag">ETL</span></div></div>
+          <div class="skill-group reveal"><h3>Accessibility</h3><div class="chips"><span class="tag">JAWS</span><span class="tag">AVT</span></div></div>
+          <div class="skill-group reveal"><h3>Tools</h3><div class="chips"><span class="tag">JIRA</span><span class="tag">TFS</span><span class="tag">QTP</span></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= ARTICLES ================= -->
+    <section id="articles" class="section">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-idx">05</span>
+          <h2 class="section-title">Articles</h2>
+        </div>
+        <p class="section-lead reveal">Notes on testing, automation, and quality strategy. More coming soon.</p>
+
+        <div class="articles-grid">
+          <article class="article-card reveal">
+            <span class="article-tag">Automation</span>
+            <h3>Designing a test framework that scales with the team</h3>
+            <p>Why maintainability beats coverage numbers, and how to structure a framework that new engineers can contribute to on day one.</p>
+            <span class="article-soon">Draft — coming soon</span>
+          </article>
+          <article class="article-card reveal">
+            <span class="article-tag">Accessibility</span>
+            <h3>Accessibility testing beyond the checklist</h3>
+            <p>Lessons from AVT1–3 and screen-reader testing on enterprise healthcare apps — where automated checks stop and judgment begins.</p>
+            <span class="article-soon">Draft — coming soon</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= CONTACT ================= -->
+    <section id="contact" class="section section-alt">
+      <div class="container">
+        <div class="section-head reveal">
+          <span class="section-idx">06</span>
+          <h2 class="section-title">Contact</h2>
+        </div>
+        <p class="section-lead reveal">Always open to meaningful conversations and new opportunities.</p>
+
+        <div class="contact-grid">
+          <div class="contact-left reveal">
+            <button class="info-item reveal-btn" id="emailReveal" type="button">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M3 6.5A1.5 1.5 0 0 1 4.5 5h15A1.5 1.5 0 0 1 21 6.5v11A1.5 1.5 0 0 1 19.5 19h-15A1.5 1.5 0 0 1 3 17.5v-11Z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span id="emailText">Click to view email</span>
+            </button>
+            <button class="info-item reveal-btn" id="phoneReveal" type="button">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M6.5 3h3l1.5 5-2 1.5a12 12 0 0 0 5 5l1.5-2 5 1.5v3a2 2 0 0 1-2 2A16 16 0 0 1 4.5 5a2 2 0 0 1 2-2Z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+              <span id="phoneText">Click to view number</span>
+            </button>
+            <div class="info-item static">
+              <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 21s7-6.3 7-11a7 7 0 1 0-14 0c0 4.7 7 11 7 11Z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="10" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></svg>
+              <span>India</span>
+            </div>
+
+            <div class="contact-socials">
+              <a href="https://www.linkedin.com/in/kishoreguptaofficial/" target="_blank" rel="noopener" aria-label="LinkedIn">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm6 0h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21H17.6v-5.4c0-1.3-.02-2.96-1.8-2.96-1.8 0-2.08 1.4-2.08 2.86V21H9V9Z"/></svg>
+              </a>
+              <a href="https://wa.me/917022466118" target="_blank" rel="noopener" class="whatsapp-link" aria-label="Chat on WhatsApp">
+                <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15l-1.3 4.7 4.8-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.6-1.2 1.2-1.7 1.2-.4 0-1 .1-3.2-.9a11 11 0 0 1-4.4-4.6c-.3-.6-.7-1.5-.7-2.3 0-.8.4-1.2.6-1.4.2-.2.4-.3.6-.3h.5c.2 0 .4 0 .6.5l.7 1.7c.1.2 0 .4-.1.6l-.4.5c-.1.2-.3.3-.1.6.5.9 1 1.4 1.8 2 .7.5 1.2.7 1.5.9.3.1.5.1.6-.1l.6-.7c.2-.2.3-.2.6-.1l1.6.8c.2.1.4.2.4.3.1.2.1.6-.1 1.1Z"/></svg>
+                Chat on WhatsApp
+              </a>
+            </div>
+          </div>
+
+          <div class="contact-right reveal">
+            <form id="contactForm" novalidate>
+              <div class="field">
+                <input type="text" id="cf-name" name="user_name" required placeholder=" " autocomplete="name" />
+                <label for="cf-name">Your name</label>
+              </div>
+              <div class="field">
+                <input type="email" id="cf-email" name="user_email" required placeholder=" " autocomplete="email" />
+                <label for="cf-email">Your email</label>
+              </div>
+              <div class="field">
+                <textarea id="cf-msg" name="message" rows="5" required placeholder=" "></textarea>
+                <label for="cf-msg">Your message</label>
+              </div>
+              <div class="form-actions">
+                <button type="submit" class="btn btn-primary" id="cf-submit">
+                  <span id="cf-btn-text">Send message</span>
+                  <span class="loader" id="cf-loader" hidden></span>
+                </button>
+                <span id="cf-status" class="form-status" role="status" aria-live="polite"></span>
+              </div>
+              <p class="form-fallback">Prefer email? <a href="#" id="mailtoFallback">Open your mail app</a>.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.svg" alt="" class="footer-logo" width="40" height="40" />
+        <p>I build quality into software.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Footer">
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <a href="#about">About</a>
+          <a href="#experience">Experience</a>
+          <a href="#projects">Projects</a>
+        </div>
+        <div class="footer-col">
+          <h4>More</h4>
+          <a href="#skills">Skills</a>
+          <a href="#articles">Articles</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <a href="https://www.linkedin.com/in/kishoreguptaofficial/" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://wa.me/917022466118" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="Kishore_Gupta_Resume.pdf" download>Resume</a>
+        </div>
+      </nav>
+    </div>
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> Kishore Gupta. All rights reserved.</p>
+      <a href="#home" class="to-top" aria-label="Back to top">Back to top ↑</a>
+    </div>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-
-    <script>
-      document.addEventListener("DOMContentLoaded", () => {
-
-      /* =========================
-        EMAILJS INIT
-      ========================= */
-      if (typeof emailjs !== "undefined") {
-        emailjs.init("epE6ueg3lV0KVg7ju");
-      }
-            
-      /* =============================
-        SIDE BAR MENU IN HAMBURGER
-      ================================ */
-      const menuToggle = document.getElementById("menu-toggle");
-      const sideMenu = document.getElementById("side-menu");
-      const overlay = document.getElementById("menu-overlay");
-
-      menuToggle.addEventListener("click", () => {
-        sideMenu.classList.toggle("active");
-        overlay.classList.toggle("active");
-        menuToggle.classList.toggle("active");
-        document.body.classList.toggle("menu-open");
-      });
-
-      /* CLOSE ON LINK */
-      document.querySelectorAll(".side-menu a").forEach(link => {
-        link.addEventListener("click", () => {
-          closeMenu();
-        });
-      });
-
-      /* CLOSE ON OUTSIDE */
-      overlay.addEventListener("click", closeMenu);
-
-      function closeMenu() {
-        sideMenu.classList.remove("active");
-        overlay.classList.remove("active");
-        menuToggle.classList.remove("active");
-        document.body.classList.remove("menu-open");
-      }
-
-      /* =========================
-        CONTACT FORM
-      ========================= */
-      const form = document.getElementById("contact-form");
-      const msg = document.getElementById("msg");
-      const loader = document.getElementById("loader");
-      const btnText = document.getElementById("btn-text");
-
-      if (form) {
-        form.addEventListener("submit", function(e){
-          e.preventDefault();
-
-          msg.style.display = "none";
-          loader.style.display = "inline-block";
-          btnText.style.opacity = "0.6";
-
-          emailjs.sendForm("service_85maghr", "template_poq5olc", this)
-          .then(() => {
-            msg.style.display = "inline-block";
-            msg.textContent = "✔ Message sent successfully";
-            msg.style.color = "#64ffda";
-            form.reset();
-          })
-          .catch(() => {
-            msg.style.display = "inline-block";
-            msg.textContent = "❌ Failed to send message";
-            msg.style.color = "red";
-          })
-          .finally(() => {
-            loader.style.display = "none";
-            btnText.style.opacity = "1";
-          });
-        });
-      }
-
-
-      /* =========================
-        PROJECT IMPACT TOGGLE
-      ========================= */
-
-      document.querySelectorAll(".impact-toggle").forEach(button => {
-        button.addEventListener("click", () => {
-
-          const impact = button.nextElementSibling;
-
-          impact.classList.toggle("active");
-
-          // Toggle button text
-          button.textContent = impact.classList.contains("active")
-            ? "Close"
-            : "View Impact";
-
-        });
-      });
-
-
-      /* =========================
-        VIEW MORE PROJECTS
-      ========================= */
-      const viewMoreBtn = document.getElementById("viewMoreBtn");
-      const hiddenProjects = document.querySelectorAll(".hidden-project");
-      const projectsSection = document.getElementById("projects");
-
-      let expanded = false;
-
-      viewMoreBtn.addEventListener("click", () => {
-
-        expanded = !expanded;
-
-        hiddenProjects.forEach(project => {
-          project.style.display = expanded ? "block" : "none";
-
-          if (expanded) {
-            project.classList.add("show");
-          }
-        });
-
-        viewMoreBtn.textContent = expanded
-          ? "Show Less"
-          : "View More Projects";
-
-        /* SCROLL FIX (ONLY WHEN COLLAPSING) */
-        if (!expanded) {
-          setTimeout(() => {
-            projectsSection.scrollIntoView({
-              behavior: "smooth",
-              block: "start"
-            });
-          }, 100); // slight delay for smoother UX
-        }
-
-      });
-
-      /* =========================
-        NAVBAR SCROLL EFFECT
-      ========================= */
-      const nav = document.querySelector(".navbar");
-
-      window.addEventListener("scroll", () => {
-        if (window.scrollY > 50) {
-          nav?.classList.add("scrolled");
-        } else {
-          nav?.classList.remove("scrolled");
-        }
-      });
-
-      /* =========================
-        SCROLL REVEAL
-      ========================= */
-      const revealElements = document.querySelectorAll(".reveal");
-
-      const revealOnScroll = () => {
-        const windowHeight = window.innerHeight;
-
-        revealElements.forEach(el => {
-          const elementTop = el.getBoundingClientRect().top;
-
-          if (elementTop < windowHeight - 100) {
-            el.classList.add("active");
-          }
-        });
-      };
-
-      window.addEventListener("scroll", revealOnScroll);
-      window.addEventListener("load", revealOnScroll);
-
-      /* ===================================
-        EMAIL + PHONE REVEAL + AUTO HIDE
-      ======================================= */     
-
-      const emailText = document.getElementById("emailText");
-      const emailCopy = document.getElementById("emailCopy");
-      const emailLabel = document.getElementById("emailLabel");
-
-      const phoneText = document.getElementById("phoneText");
-      const phoneCopy = document.getElementById("phoneCopy");
-      const phoneLabel = document.getElementById("phoneLabel");
-
-      /* 🔒 DATA */
-      const email = "kishoreguptaofficial@gmail.com";
-      const phone = "+91 9979980993";
-
-      /* TIMERS */
-      let emailTimer;
-      let phoneTimer;
-
-      /* =========================
-        RESET FUNCTIONS
-      ========================= */
-
-      function resetEmail() {
-        emailText.textContent = "Click to view email";
-        emailCopy.classList.add("disabled");
-        emailLabel.textContent = "Copy";
-      }
-
-      function resetPhone() {
-        phoneText.textContent = "Click to view number";
-        phoneCopy.classList.add("disabled");
-        phoneLabel.textContent = "Copy";
-      }
-
-      /* =========================
-        EMAIL LOGIC
-      ========================= */
-
-      emailText.addEventListener("click", () => {
-        emailText.textContent = email;
-        emailCopy.classList.remove("disabled");
-
-        clearTimeout(emailTimer);
-        emailTimer = setTimeout(resetEmail, 10000); // 10 sec reset
-      });
-
-      emailCopy.addEventListener("click", async () => {
-        if (emailCopy.classList.contains("disabled")) return;
-
-        await navigator.clipboard.writeText(email);
-
-        emailLabel.textContent = "✔ Copied!";
-
-        clearTimeout(emailTimer);
-        emailTimer = setTimeout(resetEmail, 10000);
-      });
-
-      /* =========================
-        PHONE LOGIC
-      ========================= */
-
-      phoneText.addEventListener("click", () => {
-        phoneText.textContent = phone;
-        phoneCopy.classList.remove("disabled");
-
-        clearTimeout(phoneTimer);
-        phoneTimer = setTimeout(resetPhone, 10000);
-      });
-
-      phoneCopy.addEventListener("click", async () => {
-        if (phoneCopy.classList.contains("disabled")) return;
-
-        await navigator.clipboard.writeText(phone);
-
-        phoneLabel.textContent = "✔ Copied!";
-
-        clearTimeout(phoneTimer);
-        phoneTimer = setTimeout(resetPhone, 10000);
-      });
-
-      /* =========================
-        SEARCH SYSTEM
-      ========================= */
-      const input = document.getElementById("searchInput");
-      const searchBtn = document.getElementById("searchBtn");
-      const feedback = document.getElementById("searchFeedback");
-      const clearBtn = document.getElementById("clearBtn");
-
-      function clearHighlights() {
-        document.querySelectorAll(".highlight").forEach(el => {
-          el.outerHTML = el.innerText;
-        });
-      }
-
-      function performSearch() {
-        clearHighlights();
-
-        const query = input.value.trim();
-        if (!query) {
-          feedback.classList.remove("active");
-          feedback.textContent = "";
-          return;
-        }
-
-        let matchCount = 0;
-        const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
-
-        let node;
-        while ((node = walker.nextNode())) {
-          if (node.parentNode.closest(".nav-search")) continue;
-
-          const text = node.nodeValue;
-          const regex = new RegExp(query, "gi");
-
-          if (regex.test(text)) {
-            matchCount += (text.match(regex) || []).length;
-
-            const span = document.createElement("span");
-            span.innerHTML = text.replace(regex, match => `<mark class="highlight">${match}</mark>`);
-            node.parentNode.replaceChild(span, node);
-          }
-        }
-
-        feedback.textContent = matchCount > 0
-          ? `${matchCount} match${matchCount > 1 ? "es" : ""} found`
-          : "No matches found";
-
-        feedback.classList.add("active");
-      }
-
-      searchBtn?.addEventListener("click", performSearch);
-
-      input?.addEventListener("keypress", (e) => {
-        if (e.key === "Enter") performSearch();
-      });
-
-      input?.addEventListener("input", () => {
-        const navSearch = document.querySelector(".nav-search");
-
-        if (!input.value.trim()) {
-          clearHighlights();
-          feedback.classList.remove("active");
-          navSearch?.classList.remove("active");
-        } else {
-          navSearch?.classList.add("active");
-        }
-      });
-
-      clearBtn?.addEventListener("click", () => {
-        input.value = "";
-        input.focus();
-        clearHighlights();
-        feedback.classList.remove("active");
-      });
-
-    });
-    
-  /* ==========================
-        FOOTER UPGRADE
-      ========================== */
-      const footer = document.querySelector(".footer");
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              footer.classList.add("show");
-            }
-          });
-        },
-        { threshold: 0.2 }
-      );
-
-      observer.observe(footer);
-
-      /* ==========================
-        DYNAMIC COPYRIGHT YEAR
-      ========================== */  
-      document.getElementById("year").textContent = new Date().getFullYear();       
-
-      /* =========================
-        BACK TO TOP (FINAL CLEAN)
-      ========================= */
-      const btn = document.getElementById("backToTop");
-
-      btn.addEventListener("click", (e) => {
-        e.preventDefault();
-
-        window.scrollTo({
-          top: 0,
-          behavior: "smooth"
-        });
-      });
-
-      /* FIX SCROLL POSITION ON REFRESH */
-      if ('scrollRestoration' in history) {
-        history.scrollRestoration = 'manual';
-      }
-
-      document.addEventListener("DOMContentLoaded", () => {
-
-        // FORCE TOP ON LOAD
-        window.scrollTo(0, 0);
-
-        if (window.location.hash) {
-          window.scrollTo(0, 0);
-        }
-
-      });
-
-      /* =========================
-        FOOTER SCROLL REVEAL
-      ========================= */     
-
-      const footerObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            footer.classList.add("show");
-          }
-        });
-      }, { threshold: 0.2 });
-
-      footerObserver.observe(footer);
-
-      /* =========================================
-              PERFECT SCROLL CONTROL
-      ========================================== */
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function(e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute("href"));
-          const offset = 80; // navbar height
-
-          const position = target.offsetTop - offset;
-
-          window.scrollTo({
-            top: position,
-            behavior: "smooth"
-          });
-        });
-      });
-
-  </script>
-  
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js" defer></script>
+  <script src="js/main.js" defer></script>
 </body>
 </html>

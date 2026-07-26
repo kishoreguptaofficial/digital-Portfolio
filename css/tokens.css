@@ -95,6 +95,8 @@
 
 /* ============================================================
    LIGHT THEME
+   Applied when the visitor forces light (data-theme="light")
+   OR when they haven't chosen and their OS prefers light.
    ============================================================ */
 :root[data-theme="light"] {
   color-scheme: light;
@@ -120,6 +122,34 @@
   --shadow-lg: 0 24px 60px rgba(16, 24, 40, 0.14);
 
   --grid-line: rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme]) {
+    color-scheme: light;
+
+    --bg: #f7f8fa;
+    --bg-elevated: #ffffff;
+    --surface: #ffffff;
+    --surface-2: #f0f2f5;
+    --border: #e2e6ec;
+    --border-strong: #cbd2dc;
+
+    --text: #11151c;
+    --text-muted: #4a5464;
+    --text-dim: #6b7688;
+    --text-on-accent: #06231a;
+
+    --accent: #12a06a;
+    --accent-strong: #0e845a;
+    --accent-soft: rgba(18, 160, 106, 0.12);
+
+    --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+    --shadow-md: 0 10px 28px rgba(16, 24, 40, 0.10);
+    --shadow-lg: 0 24px 60px rgba(16, 24, 40, 0.14);
+
+    --grid-line: rgba(0, 0, 0, 0.04);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
