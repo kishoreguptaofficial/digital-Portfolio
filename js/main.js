@@ -72,6 +72,19 @@
   if (prefersReduced || !("IntersectionObserver" in window)) {
     reveals.forEach(function (el) { el.classList.add("in"); });
   } else {
+    /* Stagger siblings so grids/lists cascade in like Apple product pages.
+       Delay is based on position among reveal siblings sharing a parent,
+       capped so long lists don't drag. */
+    var STEP = 70, CAP = 6;
+    var counts = new Map();
+    reveals.forEach(function (el) {
+      var parent = el.parentNode;
+      var idx = counts.get(parent) || 0;
+      counts.set(parent, idx + 1);
+      if (idx > 0) {
+        el.style.setProperty("--reveal-delay", Math.min(idx, CAP) * STEP + "ms");
+      }
+    });
     var io = new IntersectionObserver(function (entries) {
       entries.forEach(function (entry) {
         if (entry.isIntersecting) {
