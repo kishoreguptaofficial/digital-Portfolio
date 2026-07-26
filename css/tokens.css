@@ -1,0 +1,131 @@
+/* ============================================================
+   Kishore Gupta Portfolio — Design Tokens
+   Phase 1 design system. Dark is the default theme.
+   Toggle light mode with <html data-theme="light">.
+   ============================================================ */
+
+:root {
+  /* ---- Type families ---- */
+  --font-display: "Sora", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ---- Fluid type scale (Minor Third ~1.2) ---- */
+  --step--1: clamp(0.83rem, 0.80rem + 0.15vw, 0.90rem);
+  --step-0:  clamp(1.00rem, 0.95rem + 0.25vw, 1.10rem);   /* body */
+  --step-1:  clamp(1.20rem, 1.12rem + 0.40vw, 1.40rem);
+  --step-2:  clamp(1.44rem, 1.30rem + 0.70vw, 1.80rem);
+  --step-3:  clamp(1.73rem, 1.50rem + 1.15vw, 2.40rem);
+  --step-4:  clamp(2.07rem, 1.70rem + 1.85vw, 3.20rem);
+  --step-5:  clamp(2.49rem, 1.95rem + 2.70vw, 4.20rem);   /* hero */
+
+  --leading-tight: 1.12;
+  --leading-snug: 1.3;
+  --leading-normal: 1.65;
+  --tracking-tight: -0.02em;
+  --tracking-wide: 0.08em;
+
+  --weight-normal: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+
+  /* ---- Spacing scale (8pt-based) ---- */
+  --space-2xs: 0.25rem;
+  --space-xs:  0.5rem;
+  --space-sm:  0.75rem;
+  --space-md:  1rem;
+  --space-lg:  1.5rem;
+  --space-xl:  2.5rem;
+  --space-2xl: 4rem;
+  --space-3xl: 6rem;
+  --space-4xl: 9rem;
+
+  --container-max: 1200px;
+  --content-max: 68ch;
+
+  /* ---- Radii ---- */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+
+  /* ---- Motion ---- */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 140ms;
+  --dur-mid: 260ms;
+  --dur-slow: 520ms;
+
+  /* ---- Brand accent (stable across themes) ---- */
+  --accent: #2ecc8f;           /* signal green — "quality / pass" */
+  --accent-strong: #21b87c;
+  --accent-soft: rgba(46, 204, 143, 0.14);
+  --accent-2: #7c8cff;         /* secondary (violet) for gradients */
+  --gradient-brand: linear-gradient(120deg, var(--accent) 0%, var(--accent-2) 100%);
+}
+
+/* ============================================================
+   DARK THEME (default)
+   ============================================================ */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --bg: #0c0e12;             /* warm ink, not navy */
+  --bg-elevated: #14171d;
+  --surface: #171b22;
+  --surface-2: #1e232b;
+  --border: #2a2f39;
+  --border-strong: #3a414d;
+
+  --text: #eef1f5;
+  --text-muted: #aab2c0;
+  --text-dim: #7a8394;
+  --text-on-accent: #06231a;
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.45);
+  --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.55);
+  --ring: 0 0 0 3px var(--accent-soft);
+
+  --grid-line: rgba(255, 255, 255, 0.04);
+}
+
+/* ============================================================
+   LIGHT THEME
+   ============================================================ */
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --bg: #f7f8fa;
+  --bg-elevated: #ffffff;
+  --surface: #ffffff;
+  --surface-2: #f0f2f5;
+  --border: #e2e6ec;
+  --border-strong: #cbd2dc;
+
+  --text: #11151c;
+  --text-muted: #4a5464;
+  --text-dim: #6b7688;
+  --text-on-accent: #06231a;
+
+  --accent: #12a06a;         /* darkened for AA contrast on light */
+  --accent-strong: #0e845a;
+  --accent-soft: rgba(18, 160, 106, 0.12);
+
+  --shadow-sm: 0 1px 2px rgba(16, 24, 40, 0.06);
+  --shadow-md: 0 10px 28px rgba(16, 24, 40, 0.10);
+  --shadow-lg: 0 24px 60px rgba(16, 24, 40, 0.14);
+
+  --grid-line: rgba(0, 0, 0, 0.04);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-fast: 0ms;
+    --dur-mid: 0ms;
+    --dur-slow: 0ms;
+  }
+}

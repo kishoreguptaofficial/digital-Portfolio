@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Style Guide — Kishore Gupta Portfolio</title>
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="css/tokens.css" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: var(--step-0);
+      line-height: var(--leading-normal);
+      transition: background var(--dur-mid) var(--ease-out), color var(--dur-mid) var(--ease-out);
+    }
+    h1, h2, h3, h4 { font-family: var(--font-display); line-height: var(--leading-tight); letter-spacing: var(--tracking-tight); margin: 0; }
+    a { color: var(--accent); }
+    code { font-family: var(--font-mono); font-size: 0.85em; color: var(--text-muted); }
+
+    .wrap { max-width: var(--container-max); margin: 0 auto; padding: var(--space-xl) var(--space-lg) var(--space-4xl); }
+
+    /* ---- page header ---- */
+    .sg-top { display: flex; align-items: center; justify-content: space-between; gap: var(--space-md); flex-wrap: wrap; margin-bottom: var(--space-2xl); }
+    .sg-top .lead { color: var(--text-muted); max-width: 52ch; margin-top: var(--space-xs); }
+    .kicker { font-family: var(--font-mono); font-size: var(--step--1); letter-spacing: var(--tracking-wide); text-transform: uppercase; color: var(--accent); }
+
+    /* ---- section blocks ---- */
+    section.block { margin-top: var(--space-3xl); }
+    .section-head { display: flex; align-items: baseline; gap: var(--space-md); border-bottom: 1px solid var(--border); padding-bottom: var(--space-sm); margin-bottom: var(--space-xl); }
+    .section-head h2 { font-size: var(--step-3); }
+    .section-head .idx { font-family: var(--font-mono); color: var(--text-dim); font-size: var(--step-0); }
+
+    .grid { display: grid; gap: var(--space-lg); }
+    .cols-2 { grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); }
+    .cols-3 { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .cols-4 { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+
+    /* ---- color swatches ---- */
+    .swatch { border: 1px solid var(--border); border-radius: var(--radius-md); overflow: hidden; background: var(--surface); }
+    .swatch .chip { height: 74px; }
+    .swatch .meta { padding: var(--space-sm) var(--space-md); font-size: var(--step--1); }
+    .swatch .meta b { display: block; font-family: var(--font-body); font-weight: var(--weight-semibold); color: var(--text); }
+    .swatch .meta span { color: var(--text-dim); font-family: var(--font-mono); }
+
+    /* ---- type specimens ---- */
+    .type-row { display: flex; align-items: baseline; gap: var(--space-lg); padding: var(--space-sm) 0; border-bottom: 1px dashed var(--border); flex-wrap: wrap; }
+    .type-row .tag { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); min-width: 96px; }
+
+    /* ---- spacing / radius demo ---- */
+    .space-demo { display: flex; align-items: flex-end; gap: var(--space-md); flex-wrap: wrap; }
+    .space-demo .bar { background: var(--accent-soft); border: 1px solid var(--accent); border-radius: var(--radius-xs); width: 40px; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 4px; font-family: var(--font-mono); font-size: 10px; color: var(--text-muted); }
+    .radius-demo { display: flex; gap: var(--space-md); flex-wrap: wrap; }
+    .radius-demo .box { width: 90px; height: 90px; background: var(--surface-2); border: 1px solid var(--border-strong); display: grid; place-items: center; font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-muted); }
+    .shadow-demo .box { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-md); height: 90px; display: grid; place-items: center; font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-muted); }
+
+    /* ============ COMPONENTS ============ */
+    /* Buttons */
+    .btn { font-family: var(--font-body); font-weight: var(--weight-semibold); font-size: var(--step-0); display: inline-flex; align-items: center; gap: var(--space-xs); padding: 0.7em 1.25em; border-radius: var(--radius-pill); border: 1px solid transparent; cursor: pointer; text-decoration: none; transition: transform var(--dur-fast) var(--ease-out), background var(--dur-fast), border-color var(--dur-fast), box-shadow var(--dur-fast); }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible { outline: none; box-shadow: var(--ring); }
+    .btn-primary { background: var(--accent); color: var(--text-on-accent); }
+    .btn-primary:hover { background: var(--accent-strong); box-shadow: var(--shadow-md); }
+    .btn-secondary { background: transparent; color: var(--text); border-color: var(--border-strong); }
+    .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-ghost { background: transparent; color: var(--text-muted); }
+    .btn-ghost:hover { color: var(--text); background: var(--surface-2); }
+
+    /* Chips / tech tags */
+    .chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+    .tag { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-muted); background: var(--surface-2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 0.25em 0.7em; }
+    .tag.accent { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+    .filter { font-family: var(--font-body); font-weight: var(--weight-medium); font-size: var(--step--1); border-radius: var(--radius-pill); padding: 0.45em 1em; border: 1px solid var(--border-strong); background: transparent; color: var(--text-muted); cursor: pointer; transition: all var(--dur-fast); }
+    .filter[aria-pressed="true"] { background: var(--accent); color: var(--text-on-accent); border-color: var(--accent); }
+
+    /* Card */
+    .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform var(--dur-mid) var(--ease-out), border-color var(--dur-mid), box-shadow var(--dur-mid); }
+    .card:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: var(--shadow-md); }
+    .project-card h3 { font-size: var(--step-1); margin-bottom: 2px; }
+    .project-meta { font-family: var(--font-mono); font-size: var(--step--1); color: var(--accent); display: block; margin-bottom: var(--space-sm); }
+    .project-card p { color: var(--text-muted); margin: 0 0 var(--space-md); }
+
+    /* Timeline node */
+    .tl { position: relative; padding-left: var(--space-xl); }
+    .tl::before { content: ""; position: absolute; left: 7px; top: 6px; bottom: 6px; width: 2px; background: var(--border-strong); }
+    .tl-node { position: relative; padding-bottom: var(--space-lg); }
+    .tl-node::before { content: ""; position: absolute; left: calc(-1 * var(--space-xl) + 1px); top: 5px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); }
+    .tl-node .yr { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); }
+    .tl-node h4 { font-size: var(--step-1); margin: 2px 0; }
+
+    /* Form input (floating label) */
+    .field { position: relative; margin-bottom: var(--space-md); }
+    .field input, .field textarea { width: 100%; background: var(--bg-elevated); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); color: var(--text); font: inherit; padding: 1.15em 0.9em 0.5em; transition: border-color var(--dur-fast), box-shadow var(--dur-fast); }
+    .field textarea { resize: vertical; min-height: 120px; }
+    .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
+    .field label { position: absolute; left: 0.9em; top: 0.9em; color: var(--text-dim); pointer-events: none; transition: all var(--dur-fast) var(--ease-out); font-size: var(--step-0); }
+    .field input:focus + label, .field input:not(:placeholder-shown) + label,
+    .field textarea:focus + label, .field textarea:not(:placeholder-shown) + label { top: 0.35em; font-size: var(--step--1); color: var(--accent); }
+
+    /* Theme toggle */
+    .theme-toggle { display: inline-flex; align-items: center; gap: 8px; background: var(--surface-2); border: 1px solid var(--border); color: var(--text); border-radius: var(--radius-pill); padding: 0.5em 1em; cursor: pointer; font: inherit; font-size: var(--step--1); }
+    .theme-toggle:focus-visible { outline: none; box-shadow: var(--ring); }
+
+    .note { color: var(--text-dim); font-size: var(--step--1); margin-top: var(--space-md); }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <header class="sg-top">
+      <div>
+        <p class="kicker">Phase 1 — Design System</p>
+        <h1 style="font-size: var(--step-4); margin-top: 6px;">Style Guide</h1>
+        <p class="lead">Design tokens and core components for the Kishore Gupta portfolio rebuild. Toggle the theme to review dark (default) and light. Nothing here is applied to the live site yet — this is for direction approval.</p>
+      </div>
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle color theme">
+        <span id="themeIcon">🌙</span><span id="themeName">Dark</span>
+      </button>
+    </header>
+
+    <!-- COLOR -->
+    <section class="block">
+      <div class="section-head"><span class="idx">01</span><h2>Color</h2></div>
+      <h3 style="font-size: var(--step-1); margin-bottom: var(--space-md);">Brand</h3>
+      <div class="grid cols-4">
+        <div class="swatch"><div class="chip" style="background: var(--accent);"></div><div class="meta"><b>Accent</b><span>--accent</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--accent-strong);"></div><div class="meta"><b>Accent strong</b><span>--accent-strong</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--accent-2);"></div><div class="meta"><b>Secondary</b><span>--accent-2</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--gradient-brand);"></div><div class="meta"><b>Brand gradient</b><span>--gradient-brand</span></div></div>
+      </div>
+      <h3 style="font-size: var(--step-1); margin: var(--space-xl) 0 var(--space-md);">Surfaces &amp; text (theme-aware)</h3>
+      <div class="grid cols-4">
+        <div class="swatch"><div class="chip" style="background: var(--bg);"></div><div class="meta"><b>Background</b><span>--bg</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--surface);"></div><div class="meta"><b>Surface</b><span>--surface</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--surface-2);"></div><div class="meta"><b>Surface 2</b><span>--surface-2</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--border-strong);"></div><div class="meta"><b>Border</b><span>--border-strong</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--text);"></div><div class="meta"><b>Text</b><span>--text</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--text-muted);"></div><div class="meta"><b>Text muted</b><span>--text-muted</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--text-dim);"></div><div class="meta"><b>Text dim</b><span>--text-dim</span></div></div>
+        <div class="swatch"><div class="chip" style="background: var(--accent-soft);"></div><div class="meta"><b>Accent soft</b><span>--accent-soft</span></div></div>
+      </div>
+      <p class="note">Accent darkens automatically in light mode (<code>#12a06a</code>) to hold WCAG AA contrast on light surfaces.</p>
+    </section>
+
+    <!-- TYPE -->
+    <section class="block">
+      <div class="section-head"><span class="idx">02</span><h2>Typography</h2></div>
+      <p class="note" style="margin-top:0;">Display: <b>Sora</b> · Body: <b>Inter</b> · Mono: <b>JetBrains Mono</b>. Scale is fluid (clamp) on a ~1.2 ratio.</p>
+      <div style="margin-top: var(--space-lg);">
+        <div class="type-row"><span class="tag">step-5 / hero</span><span style="font-family:var(--font-display); font-weight:700; font-size:var(--step-5); line-height:1.05;">I build quality into software</span></div>
+        <div class="type-row"><span class="tag">step-3 / h2</span><span style="font-family:var(--font-display); font-weight:600; font-size:var(--step-3);">Selected projects</span></div>
+        <div class="type-row"><span class="tag">step-1 / h3</span><span style="font-family:var(--font-display); font-weight:600; font-size:var(--step-1);">BCM — Automation Team</span></div>
+        <div class="type-row"><span class="tag">step-0 / body</span><span style="font-size:var(--step-0); max-width:60ch;">Over the past 10+ years I've grown from testing fundamentals to leading automation and quality strategy across enterprise systems.</span></div>
+        <div class="type-row"><span class="tag">step--1 / mono</span><span style="font-family:var(--font-mono); font-size:var(--step--1); color:var(--accent);">Healthcare · QA Lead · 2025–Present</span></div>
+      </div>
+    </section>
+
+    <!-- SPACING / RADIUS / SHADOW -->
+    <section class="block">
+      <div class="section-head"><span class="idx">03</span><h2>Spacing, radius &amp; elevation</h2></div>
+      <h3 style="font-size: var(--step-1); margin-bottom: var(--space-md);">Spacing scale (8pt)</h3>
+      <div class="space-demo">
+        <div class="bar" style="height: var(--space-2xs);">2xs</div>
+        <div class="bar" style="height: var(--space-xs);">xs</div>
+        <div class="bar" style="height: var(--space-sm);">sm</div>
+        <div class="bar" style="height: var(--space-md);">md</div>
+        <div class="bar" style="height: var(--space-lg);">lg</div>
+        <div class="bar" style="height: var(--space-xl);">xl</div>
+        <div class="bar" style="height: var(--space-2xl);">2xl</div>
+        <div class="bar" style="height: var(--space-3xl);">3xl</div>
+      </div>
+      <h3 style="font-size: var(--step-1); margin: var(--space-xl) 0 var(--space-md);">Radii</h3>
+      <div class="radius-demo">
+        <div class="box" style="border-radius: var(--radius-xs);">xs</div>
+        <div class="box" style="border-radius: var(--radius-sm);">sm</div>
+        <div class="box" style="border-radius: var(--radius-md);">md</div>
+        <div class="box" style="border-radius: var(--radius-lg);">lg</div>
+        <div class="box" style="border-radius: var(--radius-pill);">pill</div>
+      </div>
+      <h3 style="font-size: var(--step-1); margin: var(--space-xl) 0 var(--space-md);">Elevation</h3>
+      <div class="grid cols-3 shadow-demo">
+        <div class="box" style="box-shadow: var(--shadow-sm);">shadow-sm</div>
+        <div class="box" style="box-shadow: var(--shadow-md);">shadow-md</div>
+        <div class="box" style="box-shadow: var(--shadow-lg);">shadow-lg</div>
+      </div>
+    </section>
+
+    <!-- BUTTONS -->
+    <section class="block">
+      <div class="section-head"><span class="idx">04</span><h2>Buttons</h2></div>
+      <div style="display:flex; gap:var(--space-md); flex-wrap:wrap; align-items:center;">
+        <a class="btn btn-primary" href="#">Download My Resume ↓</a>
+        <a class="btn btn-secondary" href="#">View projects</a>
+        <button class="btn btn-ghost">Skip</button>
+      </div>
+      <p class="note">Hover lifts 2px; focus shows an accent ring (keyboard-visible). All pill-shaped for a consistent, friendly geometry.</p>
+    </section>
+
+    <!-- CHIPS + FILTERS -->
+    <section class="block">
+      <div class="section-head"><span class="idx">05</span><h2>Chips &amp; filters</h2></div>
+      <h3 style="font-size: var(--step-1); margin-bottom: var(--space-md);">Tech tags</h3>
+      <div class="chips">
+        <span class="tag">Selenium</span><span class="tag">Python</span><span class="tag">AWS</span>
+        <span class="tag">Jenkins</span><span class="tag accent">API Testing</span><span class="tag">Postman</span>
+      </div>
+      <h3 style="font-size: var(--step-1); margin: var(--space-xl) 0 var(--space-md);">Filter pills (project filtering)</h3>
+      <div class="chips">
+        <button class="filter" aria-pressed="true">All</button>
+        <button class="filter" aria-pressed="false">Healthcare</button>
+        <button class="filter" aria-pressed="false">Banking</button>
+        <button class="filter" aria-pressed="false">Insurance</button>
+        <button class="filter" aria-pressed="false">Manufacturing</button>
+      </div>
+    </section>
+
+    <!-- CARDS -->
+    <section class="block">
+      <div class="section-head"><span class="idx">06</span><h2>Cards &amp; timeline</h2></div>
+      <div class="grid cols-2">
+        <article class="card project-card">
+          <h3>BlueCard RTM Alerts</h3>
+          <span class="project-meta">Healthcare · QA Lead · 2024</span>
+          <p>Real-time messaging system enabling communication across healthcare systems with API and cloud validation.</p>
+          <div class="chips"><span class="tag">API Testing</span><span class="tag">Postman</span><span class="tag">AWS</span></div>
+        </article>
+        <div class="card">
+          <div class="tl">
+            <div class="tl-node"><span class="yr">2025 — Present</span><h4>QA Lead — BCM Automation</h4><p style="color:var(--text-muted); margin:0;">Leading automation, regression stability, CI/CD integration.</p></div>
+            <div class="tl-node" style="padding-bottom:0;"><span class="yr">2017 — 2018</span><h4>Test Engineer — Apple LED</h4><p style="color:var(--text-muted); margin:0;">ETL &amp; dashboard validation, Vertica → SAP HANA.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORM -->
+    <section class="block">
+      <div class="section-head"><span class="idx">07</span><h2>Form fields</h2></div>
+      <div style="max-width: 460px;">
+        <div class="field"><input type="text" id="n" placeholder=" " /><label for="n">Your name</label></div>
+        <div class="field"><input type="email" id="e" placeholder=" " /><label for="e">Your email</label></div>
+        <div class="field"><textarea id="m" placeholder=" "></textarea><label for="m">Your message</label></div>
+        <button class="btn btn-primary" type="button">Send message</button>
+      </div>
+    </section>
+
+  </div>
+
+  <script>
+    const root = document.documentElement;
+    const btn = document.getElementById("themeToggle");
+    const icon = document.getElementById("themeIcon");
+    const name = document.getElementById("themeName");
+    btn.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      icon.textContent = next === "dark" ? "🌙" : "☀️";
+      name.textContent = next === "dark" ? "Dark" : "Light";
+    });
+  </script>
+</body>
+</html>
