@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls -la \"C:/Users/gupta/Desktop/Digital Portfolio Claude\" 2>/dev/null; echo \"---DESKTOP---\"; ls -la \"C:/Users/gupta/Desktop\" 2>/dev/null | head -40)",
+      "Bash(curl -sL -A \"Mozilla/5.0\" https://kishoreguptaofficial.in -o baseline_live.html -w \"HTTP %{http_code}  size:%{size_download} bytes\\\\n\")",
+      "Bash(rm -f script.js)",
+      "Bash(mkdir -p images documents)",
+      "Bash(curl -sL \"https://kishoreguptaofficial.in/images/logo.svg\" -o images/logo.svg -w \"logo.svg %{http_code} %{size_download}b\\\\n\")",
+      "Bash(curl -sL \"https://kishoreguptaofficial.in/images/profile.jpg\" -o images/profile.jpg -w \"profile.jpg %{http_code} %{size_download}b\\\\n\")",
+      "Bash(curl -sL \"https://kishoreguptaofficial.in/Kishore_Gupta_Resume.pdf\" -o Kishore_Gupta_Resume.pdf -w \"resume.pdf %{http_code} %{size_download}b\\\\n\")",
+      "Bash(mv baseline_live.html index.html)",
+      "Bash(git init *)",
+      "Bash(printf \"node_modules/\\\\n.DS_Store\\\\nThumbs.db\\\\n\")",
+      "Bash(rmdir documents *)",
+      "Bash(git add *)",
+      "Bash(git -c user.name=\"Kishore Gupta\" -c user.email=\"swagatmohapatra1994@gmail.com\" commit -q -m \"Phase 0: baseline of live site \\(reconstructed from kishoreguptaofficial.in\\)\")"
+    ]
+  }
+}
