@@ -334,6 +334,46 @@ body.menu-open { overflow: hidden; }
 .article-card:hover .article-link::after { transform: translateX(3px); }
 
 /* ============================================================
+   ELEVATION — PHASE B (projects / timeline / skills)
+   ============================================================ */
+/* Project cards: cursor spotlight + domain-accent top bar */
+.project-card { position: relative; overflow: hidden; }
+.project-card::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: 0; transition: opacity var(--dur-mid); background: radial-gradient(240px circle at var(--mx, 50%) var(--my, 0%), color-mix(in srgb, var(--card-accent, var(--accent)) 15%, transparent), transparent 60%); }
+.project-card:hover::before { opacity: 1; }
+.project-card::after { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 3px; z-index: 1; background: linear-gradient(90deg, var(--card-accent, var(--accent)), transparent 85%); transform: scaleX(0); transform-origin: left; transition: transform var(--dur-mid) var(--ease-out); }
+.project-card:hover::after { transform: scaleX(1); }
+.project-card > * { position: relative; z-index: 1; }
+.project-card[data-domain="Healthcare"] { --card-accent: #2ecc8f; }
+.project-card[data-domain="Banking"] { --card-accent: #8a97ff; }
+.project-card[data-domain="Insurance"] { --card-accent: #e0a63a; }
+.project-card[data-domain="Manufacturing"] { --card-accent: #22d3c9; }
+.project-year::before { content: ""; display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--card-accent, var(--accent)); margin-right: 0.5em; vertical-align: middle; }
+.tag { transition: color var(--dur-fast), border-color var(--dur-fast); }
+.chips .tag:hover, .tech-stack .tag:hover { color: var(--accent); border-color: var(--accent); }
+
+/* Timeline: draw-in line + node glow + carded entries */
+html.js .timeline::before { transform: scaleY(0); transform-origin: top; transition: transform 1.4s var(--ease-out); }
+html.js .timeline.drawn::before { transform: scaleY(1); }
+.tl-item::before { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent); }
+.tl-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); transition: transform var(--dur-mid) var(--ease-spring), border-color var(--dur-mid), box-shadow var(--dur-mid); }
+.section-alt .tl-card { background: var(--surface); }
+.tl-item:hover .tl-card { transform: translateX(5px); border-color: var(--border-strong); box-shadow: var(--shadow-md); }
+.tl-year { display: block; margin-bottom: 4px; }
+
+/* Skills: header glyph + tools marquee */
+.skill-group h3::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 3px; background: var(--gradient-brand); margin-right: 0.55em; vertical-align: middle; }
+.marquee { margin-top: var(--space-xl); overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); mask-image: linear-gradient(90deg, transparent, #000 7%, #000 93%, transparent); }
+.marquee-track { display: flex; gap: var(--space-sm); width: max-content; animation: marquee 36s linear infinite; }
+.marquee:hover .marquee-track { animation-play-state: paused; }
+.marquee .tag { white-space: nowrap; }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (prefers-reduced-motion: reduce) {
+  html.js .timeline::before { transform: scaleY(1); transition: none; }
+  .marquee-track { animation: none; flex-wrap: wrap; width: auto; }
+  .marquee { -webkit-mask-image: none; mask-image: none; }
+}
+
+/* ============================================================
    SCROLL REVEAL
    ============================================================ */
 html.js .reveal {

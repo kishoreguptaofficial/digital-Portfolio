@@ -153,6 +153,32 @@
     });
   });
 
+  /* ---------------- PROJECT CARD SPOTLIGHT ---------------- */
+  if (window.matchMedia("(pointer: fine)").matches) {
+    document.querySelectorAll(".project-card").forEach(function (card) {
+      card.addEventListener("mousemove", function (e) {
+        var r = card.getBoundingClientRect();
+        card.style.setProperty("--mx", (e.clientX - r.left) + "px");
+        card.style.setProperty("--my", (e.clientY - r.top) + "px");
+      });
+    });
+  }
+
+  /* ---------------- TIMELINE DRAW-IN ---------------- */
+  var timeline = document.querySelector(".timeline");
+  if (timeline) {
+    if (prefersReduced || !("IntersectionObserver" in window)) {
+      timeline.classList.add("drawn");
+    } else {
+      var tlIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) {
+          if (en.isIntersecting) { timeline.classList.add("drawn"); tlIO.unobserve(timeline); }
+        });
+      }, { threshold: 0.15 });
+      tlIO.observe(timeline);
+    }
+  }
+
   /* ---------------- EMAIL / PHONE REVEAL (obfuscated) ---------------- */
   /* Stored base64 so raw values aren't in page source as plain text. */
   var DATA = {

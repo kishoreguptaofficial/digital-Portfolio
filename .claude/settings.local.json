@@ -54,7 +54,8 @@
       "Bash(sed -i 's|\\\\.\\\\./images/logo-mark.svg|../images/logo.svg|g' articles/accessibility-beyond-checklist.html articles/scaling-test-framework.html)",
       "Bash(git commit -q -m 'Logo: new hexagon K–G monogram in vibrant brand gradient *)",
       "Bash(node __TRACKED_VAR__/server.js 'C:/Users/gupta/Desktop/Digital Portfolio Claude')",
-      "Bash(git commit -q -m 'Elevate Phase A: cinematic hero + metrics band + scroll polish *)"
+      "Bash(git commit -q -m 'Elevate Phase A: cinematic hero + metrics band + scroll polish *)",
+      "Bash(git commit -q -m 'Elevate Phase B: richer projects, timeline & skills *)"
     ]
   }
 }
