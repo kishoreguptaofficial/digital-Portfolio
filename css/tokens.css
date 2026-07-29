@@ -17,7 +17,8 @@
   --step-2:  clamp(1.44rem, 1.30rem + 0.70vw, 1.80rem);
   --step-3:  clamp(1.73rem, 1.50rem + 1.15vw, 2.40rem);
   --step-4:  clamp(2.07rem, 1.70rem + 1.85vw, 3.20rem);
-  --step-5:  clamp(2.49rem, 1.95rem + 2.70vw, 4.20rem);   /* hero */
+  --step-5:  clamp(2.49rem, 1.95rem + 2.70vw, 4.20rem);
+  --step-6:  clamp(2.8rem, 1.85rem + 4.4vw, 5.2rem);      /* hero display */
 
   --leading-tight: 1.12;
   --leading-snug: 1.3;

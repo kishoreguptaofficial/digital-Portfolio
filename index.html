@@ -60,6 +60,7 @@
 
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="scroll-progress" aria-hidden="true"><span class="scroll-progress-bar" id="scrollBar"></span></div>
 
   <!-- ================= HEADER / NAV ================= -->
   <header class="site-header" id="siteHeader">
@@ -108,22 +109,60 @@
 
     <!-- ================= HERO ================= -->
     <section id="home" class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <span class="aurora aurora-1"></span>
+        <span class="aurora aurora-2"></span>
+        <span class="aurora aurora-3"></span>
+        <span class="hero-grid"></span>
+      </div>
       <div class="container hero-inner">
-        <p class="kicker reveal">QA Lead · Automation · 10+ years</p>
-        <h1 class="hero-title reveal">Hi, I am Kishore Gupta</h1>
-        <p class="hero-tagline reveal">I build <span class="grad-text">quality</span> into software.</p>
-        <p class="hero-desc reveal">
-          With 10+ years in automation and testing, I design scalable test frameworks and ensure
-          reliability across modern web, API, and cloud applications — across healthcare, banking,
-          insurance, and manufacturing.
-        </p>
-        <div class="hero-btns reveal">
-          <a href="Kishore_Gupta_Resume.pdf" download class="btn btn-primary">
-            Download My Resume
-            <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-          <a href="#projects" class="btn btn-secondary">View projects</a>
+        <div class="hero-copy">
+          <p class="hero-status reveal"><span class="status-dot" aria-hidden="true"></span> Available for QA leadership roles</p>
+          <h1 class="hero-title reveal">Hi, I'm Kishore&nbsp;Gupta</h1>
+          <p class="hero-tagline reveal">I build <span class="grad-text">quality</span> into software.</p>
+          <p class="hero-desc reveal">
+            A QA Lead with 10+ years designing scalable test frameworks and ensuring reliability
+            across web, API, and cloud systems — in healthcare, banking, insurance, and manufacturing.
+          </p>
+          <div class="hero-btns reveal">
+            <a href="Kishore_Gupta_Resume.pdf" download class="btn btn-primary" data-magnetic>
+              Download résumé
+              <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 21h14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </a>
+            <a href="#projects" class="btn btn-secondary">View projects</a>
+          </div>
+          <ul class="hero-trust reveal" aria-label="Industry domains">
+            <li>Healthcare</li><li>Banking</li><li>Insurance</li><li>Manufacturing</li>
+          </ul>
         </div>
+
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="runner">
+            <div class="runner-bar">
+              <span class="wdot r"></span><span class="wdot y"></span><span class="wdot g"></span>
+              <span class="runner-title">quality.suite</span>
+              <span class="runner-status">passing</span>
+            </div>
+            <ul class="runner-body">
+              <li><span class="chk">✓</span> api · contract validation <span class="ms">96ms</span></li>
+              <li><span class="chk">✓</span> ui · regression suite <span class="ms">142ms</span></li>
+              <li><span class="chk">✓</span> a11y · WCAG 2.1 AA <span class="ms">88ms</span></li>
+              <li><span class="chk">✓</span> e2e · critical user flow <span class="ms">210ms</span></li>
+              <li><span class="chk">✓</span> data · ETL integrity <span class="ms">120ms</span></li>
+              <li class="run-summary"><strong>All checks passed</strong> — 0 failed · 100% green</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= METRICS ================= -->
+    <section class="metrics" aria-label="Career at a glance">
+      <div class="container metrics-grid">
+        <div class="metric reveal"><span class="metric-num" data-count="10" data-suffix="+">0</span><span class="metric-label">Years in QA</span></div>
+        <div class="metric reveal"><span class="metric-num" data-count="9">0</span><span class="metric-label">Enterprise projects</span></div>
+        <div class="metric reveal"><span class="metric-num" data-count="4">0</span><span class="metric-label">Industry domains</span></div>
+        <div class="metric reveal"><span class="metric-num" data-count="250" data-suffix="+">0</span><span class="metric-label">API tests automated</span></div>
       </div>
     </section>
 
@@ -409,6 +448,10 @@
       </div>
     </section>
   </main>
+
+  <button class="to-top-fab" id="toTopFab" type="button" aria-label="Back to top" hidden>
+    <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M12 19V5m0 0-6 6m6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+  </button>
 
   <!-- ================= FOOTER ================= -->
   <footer class="site-footer">

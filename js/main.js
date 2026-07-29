@@ -240,6 +240,75 @@
     });
   }
 
+  /* ---------------- METRIC COUNT-UP ---------------- */
+  var nums = document.querySelectorAll(".metric-num");
+  function runCount(el) {
+    var target = parseFloat(el.dataset.count) || 0;
+    var suffix = el.dataset.suffix || "";
+    if (prefersReduced) { el.textContent = target + suffix; return; }
+    var dur = 1300, start = null;
+    function step(ts) {
+      if (start === null) start = ts;
+      var p = Math.min((ts - start) / dur, 1);
+      var eased = 1 - Math.pow(1 - p, 3);
+      el.textContent = Math.round(target * eased) + suffix;
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+  if (nums.length) {
+    if (!("IntersectionObserver" in window)) {
+      nums.forEach(runCount);
+    } else {
+      var countIO = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) { runCount(entry.target); countIO.unobserve(entry.target); }
+        });
+      }, { threshold: 0.6 });
+      nums.forEach(function (n) { countIO.observe(n); });
+    }
+  }
+
+  /* ---------------- SCROLL PROGRESS + BACK-TO-TOP ---------------- */
+  var bar = document.getElementById("scrollBar");
+  var fab = document.getElementById("toTopFab");
+  var ticking = false;
+  function onScrollUI() {
+    var h = document.documentElement;
+    var max = h.scrollHeight - h.clientHeight;
+    var pct = max > 0 ? (h.scrollTop / max) * 100 : 0;
+    if (bar) bar.style.width = pct + "%";
+    if (fab) {
+      var show = h.scrollTop > 620;
+      fab.hidden = false;
+      fab.classList.toggle("show", show);
+    }
+    ticking = false;
+  }
+  window.addEventListener("scroll", function () {
+    if (!ticking) { requestAnimationFrame(onScrollUI); ticking = true; }
+  }, { passive: true });
+  onScrollUI();
+  if (fab) {
+    fab.addEventListener("click", function () {
+      window.scrollTo({ top: 0, behavior: prefersReduced ? "auto" : "smooth" });
+    });
+  }
+
+  /* ---------------- MAGNETIC BUTTONS (desktop, pointer) ---------------- */
+  if (!prefersReduced && window.matchMedia("(pointer: fine)").matches) {
+    document.querySelectorAll("[data-magnetic]").forEach(function (el) {
+      var strength = 0.28;
+      el.addEventListener("mousemove", function (e) {
+        var r = el.getBoundingClientRect();
+        var x = (e.clientX - (r.left + r.width / 2)) * strength;
+        var y = (e.clientY - (r.top + r.height / 2)) * strength;
+        el.style.transform = "translate(" + x + "px," + y + "px)";
+      });
+      el.addEventListener("mouseleave", function () { el.style.transform = ""; });
+    });
+  }
+
   /* ---------------- DYNAMIC YEAR ---------------- */
   var yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
