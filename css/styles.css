@@ -101,9 +101,10 @@ body.menu-open { overflow: hidden; }
    ============================================================ */
 .section { padding-block: var(--space-3xl); }
 .section-alt { background: var(--bg-elevated); }
-.section-head { display: flex; align-items: baseline; gap: var(--space-md); margin-bottom: var(--space-lg); }
-.section-idx { font-family: var(--font-mono); color: var(--accent); font-size: var(--step-0); }
-.section-title { font-size: var(--step-3); }
+.section-head { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); }
+.section-idx { font-family: var(--font-mono); color: var(--accent); font-size: var(--step--1); background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius: var(--radius-pill); padding: 0.2em 0.7em; }
+.section-title { font-size: var(--step-4); }
+.section-head::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-strong), transparent); }
 .section-lead { color: var(--text-muted); max-width: 60ch; margin-bottom: var(--space-xl); }
 
 /* ============================================================
