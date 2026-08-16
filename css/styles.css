@@ -267,11 +267,24 @@ body.menu-open { overflow: hidden; }
 /* ============================================================
    SKILLS
    ============================================================ */
-.skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: var(--space-md); }
-.skill-group { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-lg); transition: border-color var(--dur-mid), transform var(--dur-mid) var(--ease-spring), box-shadow var(--dur-mid); }
-.skill-group:hover { border-color: var(--accent); transform: translateY(-4px) scale(1.02); box-shadow: var(--shadow-md); }
-.skill-group h3 { font-size: var(--step-0); color: var(--accent); font-family: var(--font-mono); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: var(--tracking-wide); margin-bottom: var(--space-sm); }
+.skills-eyebrow { display: flex; align-items: center; gap: 0.6em; font-family: var(--font-mono); font-size: var(--step--1); text-transform: uppercase; letter-spacing: var(--tracking-wide); color: var(--text-dim); margin: 0 0 var(--space-md); }
+.skills-eyebrow::before { content: ""; width: 9px; height: 9px; border-radius: 3px; background: var(--gradient-brand); }
+
+.skills-bento { column-width: 300px; column-gap: var(--space-md); }
+.skill-card { break-inside: avoid; margin: 0 0 var(--space-md); background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: border-color var(--dur-mid), transform var(--dur-mid) var(--ease-spring), box-shadow var(--dur-mid); }
+.skill-card:hover { border-color: color-mix(in srgb, var(--accent) 45%, var(--border)); transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.skill-card-head { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-md); }
+.skill-ico { flex-shrink: 0; width: 38px; height: 38px; display: inline-flex; align-items: center; justify-content: center; border-radius: 11px; color: #0c1016; background: linear-gradient(135deg, #2ee88f 0%, #22d3c9 48%, #7c8cff 100%); box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.38); }
+.skill-ico svg { width: 20px; height: 20px; stroke-width: 2; }
+.skill-card-head h3 { margin: 0; font-family: var(--font-display); font-size: var(--step-1); font-weight: var(--weight-semibold); color: var(--text); letter-spacing: normal; text-transform: none; line-height: 1.2; }
 .chips { display: flex; flex-wrap: wrap; gap: var(--space-xs); }
+
+.soft-panel { margin-top: var(--space-xl); background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-lg); padding: var(--space-xl); box-shadow: var(--shadow-sm); }
+.soft-list { list-style: none; margin: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: var(--space-md); }
+.soft-item { display: flex; align-items: flex-start; gap: 0.7em; color: var(--text); line-height: 1.6; }
+.soft-check { flex-shrink: 0; margin-top: 1px; width: 24px; height: 24px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--accent-soft); color: var(--accent); }
+.soft-check svg { width: 14px; height: 14px; stroke-width: 2.5; }
+@media (prefers-reduced-motion: reduce) { .skill-card:hover { transform: none; } }
 
 /* ============================================================
    ARTICLES
