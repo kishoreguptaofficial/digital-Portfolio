@@ -194,7 +194,6 @@ body.menu-open { overflow: hidden; }
 .about-media img { border-radius: var(--radius-lg); border: 1px solid var(--border); object-fit: cover; width: 100%; box-shadow: var(--shadow-md); }
 .about-media::after { content: ""; position: absolute; inset: 0; border-radius: var(--radius-lg); box-shadow: inset 0 0 0 1px var(--accent-soft); pointer-events: none; }
 .about-body p { color: var(--text-muted); margin-bottom: var(--space-md); }
-.about-body p:first-child { color: var(--text); font-size: var(--step-1); }
 
 /* ============================================================
    HORIZONTAL TIMELINE
