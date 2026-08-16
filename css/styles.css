@@ -198,8 +198,11 @@ body.menu-open { overflow: hidden; }
 .htimeline:focus-visible { outline: none; box-shadow: var(--ring); border-radius: var(--radius-sm); }
 .htimeline::-webkit-scrollbar { height: 6px; }
 .htimeline::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: var(--radius-pill); }
-.htl { display: flex; min-width: max-content; padding-top: 40px; }
-.htl-item { position: relative; flex: 0 0 214px; padding: 0 var(--space-md); scroll-snap-align: start; --card-accent: var(--accent); }
+.htl-note { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); margin: 0 0 var(--space-lg); display: flex; align-items: center; gap: 0.5em; }
+.htl-note-arrow { color: var(--accent); font-size: var(--step-1); line-height: 1; }
+.htl { display: flex; min-width: max-content; padding-top: 40px; list-style: none; }
+.htl-item { position: relative; flex: 0 0 214px; padding: 0 var(--space-md); scroll-snap-align: start; cursor: help; --card-accent: var(--accent); }
+.htl-item:focus-visible { outline: none; box-shadow: var(--ring); border-radius: var(--radius-sm); }
 .htl-item[data-company="Infosys"] { --card-accent: #2ee88f; }
 .htl-item[data-company="UST"] { --card-accent: #8a97ff; }
 /* connecting line (per-segment so ends trim cleanly) */
@@ -209,10 +212,9 @@ body.menu-open { overflow: hidden; }
 /* node */
 .htl-node { position: absolute; top: -40px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--card-accent); z-index: 1; box-shadow: 0 0 0 4px color-mix(in srgb, var(--card-accent) 16%, transparent); transition: transform var(--dur-fast) var(--ease-spring); }
 .section-alt .htl-node { background: var(--bg-elevated); }
-.htl-item:hover .htl-node { transform: translateX(-50%) scale(1.3); }
+.htl-item:hover .htl-node, .htl-item:focus-visible .htl-node { transform: translateX(-50%) scale(1.35); }
 .htl-year { display: block; font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); margin-bottom: 3px; }
 .htl-role { display: block; font-family: var(--font-display); font-weight: var(--weight-semibold); font-size: var(--step-1); color: var(--text); line-height: 1.15; }
-.htl-org { display: block; color: var(--text-muted); font-size: var(--step--1); margin-top: 4px; }
 
 /* ============================================================
    PROJECTS
