@@ -201,7 +201,7 @@ body.menu-open { overflow: hidden; }
 .htl-note { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); margin: 0 0 var(--space-lg); display: flex; align-items: center; gap: 0.5em; }
 .htl-note-arrow { color: var(--accent); font-size: var(--step-1); line-height: 1; }
 .htl { display: flex; min-width: max-content; padding-top: 40px; list-style: none; }
-.htl-item { position: relative; flex: 0 0 214px; padding: 0 var(--space-md); scroll-snap-align: start; cursor: help; --card-accent: var(--accent); }
+.htl-item { position: relative; flex: 0 0 214px; padding: 0 var(--space-md); scroll-snap-align: start; cursor: help; text-align: center; --card-accent: var(--accent); }
 .htl-item:focus-visible { outline: none; box-shadow: var(--ring); border-radius: var(--radius-sm); }
 .htl-item[data-company="Infosys"] { --card-accent: #2ee88f; }
 .htl-item[data-company="UST"] { --card-accent: #8a97ff; }
