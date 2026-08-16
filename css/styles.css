@@ -200,10 +200,8 @@ body.menu-open { overflow: hidden; }
 .htimeline::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: var(--radius-pill); }
 .htl { display: flex; min-width: max-content; padding-top: 40px; }
 .htl-item { position: relative; flex: 0 0 214px; padding: 0 var(--space-md); scroll-snap-align: start; --card-accent: var(--accent); }
-.htl-item[data-domain="Healthcare"] { --card-accent: #2ecc8f; }
-.htl-item[data-domain="Banking"] { --card-accent: #8a97ff; }
-.htl-item[data-domain="Insurance"] { --card-accent: #e0a63a; }
-.htl-item[data-domain="Manufacturing"] { --card-accent: #22d3c9; }
+.htl-item[data-company="Infosys"] { --card-accent: #2ee88f; }
+.htl-item[data-company="UST"] { --card-accent: #8a97ff; }
 /* connecting line (per-segment so ends trim cleanly) */
 .htl-item::after { content: ""; position: absolute; top: -34px; left: 0; width: 100%; height: 2px; background: var(--border-strong); z-index: 0; }
 .htl-item:first-child::after { left: 50%; width: 50%; }
