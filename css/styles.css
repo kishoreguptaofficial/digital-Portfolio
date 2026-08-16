@@ -197,18 +197,29 @@ body.menu-open { overflow: hidden; }
 .about-body p:first-child { color: var(--text); font-size: var(--step-1); }
 
 /* ============================================================
-   TIMELINE
+   HORIZONTAL TIMELINE
    ============================================================ */
-.timeline { position: relative; margin-top: var(--space-lg); padding-left: clamp(1.2rem, 4vw, 2rem); }
-.timeline::before { content: ""; position: absolute; left: 6px; top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--accent), var(--border-strong)); }
-.tl-item { position: relative; padding: 0 0 var(--space-xl) var(--space-xl); }
-.tl-item:last-child { padding-bottom: 0; }
-.tl-item::before { content: ""; position: absolute; left: -1px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--accent); transition: transform var(--dur-fast); }
-.tl-item:hover::before { transform: scale(1.2); }
-.tl-year { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); }
-.tl-card h3 { font-size: var(--step-1); margin: 2px 0 2px; }
-.tl-meta { display: inline-block; font-family: var(--font-mono); font-size: var(--step--1); color: var(--accent); background: var(--accent-soft); border-radius: var(--radius-sm); padding: 0.1em 0.6em; margin-bottom: var(--space-xs); }
-.tl-card p { color: var(--text-muted); max-width: 60ch; }
+.htimeline { position: relative; margin-top: var(--space-lg); overflow-x: auto; overflow-y: hidden; padding-bottom: var(--space-md); scroll-snap-type: x proximity; -webkit-mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 97.5%, transparent); mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 97.5%, transparent); }
+.htimeline:focus-visible { outline: none; box-shadow: var(--ring); border-radius: var(--radius-sm); }
+.htimeline::-webkit-scrollbar { height: 6px; }
+.htimeline::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: var(--radius-pill); }
+.htl { display: flex; min-width: max-content; padding-top: 40px; }
+.htl-item { position: relative; flex: 0 0 214px; padding: 0 var(--space-md); scroll-snap-align: start; --card-accent: var(--accent); }
+.htl-item[data-domain="Healthcare"] { --card-accent: #2ecc8f; }
+.htl-item[data-domain="Banking"] { --card-accent: #8a97ff; }
+.htl-item[data-domain="Insurance"] { --card-accent: #e0a63a; }
+.htl-item[data-domain="Manufacturing"] { --card-accent: #22d3c9; }
+/* connecting line (per-segment so ends trim cleanly) */
+.htl-item::after { content: ""; position: absolute; top: -34px; left: 0; width: 100%; height: 2px; background: var(--border-strong); z-index: 0; }
+.htl-item:first-child::after { left: 50%; width: 50%; }
+.htl-item:last-child::after { width: 50%; }
+/* node */
+.htl-node { position: absolute; top: -40px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--card-accent); z-index: 1; box-shadow: 0 0 0 4px color-mix(in srgb, var(--card-accent) 16%, transparent); transition: transform var(--dur-fast) var(--ease-spring); }
+.section-alt .htl-node { background: var(--bg-elevated); }
+.htl-item:hover .htl-node { transform: translateX(-50%) scale(1.3); }
+.htl-year { display: block; font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); margin-bottom: 3px; }
+.htl-role { display: block; font-family: var(--font-display); font-weight: var(--weight-semibold); font-size: var(--step-1); color: var(--text); line-height: 1.15; }
+.htl-org { display: block; color: var(--text-muted); font-size: var(--step--1); margin-top: 4px; }
 
 /* ============================================================
    PROJECTS
@@ -352,14 +363,17 @@ body.menu-open { overflow: hidden; }
 .tag { transition: color var(--dur-fast), border-color var(--dur-fast); }
 .chips .tag:hover, .tech-stack .tag:hover { color: var(--accent); border-color: var(--accent); }
 
-/* Timeline: draw-in line + node glow + carded entries */
-html.js .timeline::before { transform: scaleY(0); transform-origin: top; transition: transform 1.4s var(--ease-out); }
-html.js .timeline.drawn::before { transform: scaleY(1); }
-.tl-item::before { box-shadow: 0 0 0 4px color-mix(in srgb, var(--accent) 16%, transparent); }
-.tl-card { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius-md); padding: var(--space-md) var(--space-lg); transition: transform var(--dur-mid) var(--ease-spring), border-color var(--dur-mid), box-shadow var(--dur-mid); }
-.section-alt .tl-card { background: var(--surface); }
-.tl-item:hover .tl-card { transform: translateX(5px); border-color: var(--border-strong); box-shadow: var(--shadow-md); }
-.tl-year { display: block; margin-bottom: 4px; }
+/* Horizontal timeline: progressive line draw-in on scroll */
+html.js .htimeline .htl-item::after { transform: scaleX(0); transform-origin: left; transition: transform 0.5s var(--ease-out); }
+html.js .htimeline.drawn .htl-item::after { transform: scaleX(1); }
+html.js .htimeline .htl-item:nth-child(1)::after { transition-delay: 0.05s; }
+html.js .htimeline .htl-item:nth-child(2)::after { transition-delay: 0.14s; }
+html.js .htimeline .htl-item:nth-child(3)::after { transition-delay: 0.23s; }
+html.js .htimeline .htl-item:nth-child(4)::after { transition-delay: 0.32s; }
+html.js .htimeline .htl-item:nth-child(5)::after { transition-delay: 0.41s; }
+html.js .htimeline .htl-item:nth-child(6)::after { transition-delay: 0.50s; }
+html.js .htimeline .htl-item:nth-child(7)::after { transition-delay: 0.59s; }
+html.js .htimeline .htl-item:nth-child(8)::after { transition-delay: 0.68s; }
 
 /* Skills: header glyph + tools marquee */
 .skill-group h3::before { content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 3px; background: var(--gradient-brand); margin-right: 0.55em; vertical-align: middle; }
@@ -369,7 +383,7 @@ html.js .timeline.drawn::before { transform: scaleY(1); }
 .marquee .tag { white-space: nowrap; }
 @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 @media (prefers-reduced-motion: reduce) {
-  html.js .timeline::before { transform: scaleY(1); transition: none; }
+  html.js .htimeline .htl-item::after { transform: scaleX(1); transition: none; }
   .marquee-track { animation: none; flex-wrap: wrap; width: auto; }
   .marquee { -webkit-mask-image: none; mask-image: none; }
 }

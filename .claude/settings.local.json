@@ -56,7 +56,8 @@
       "Bash(node __TRACKED_VAR__/server.js 'C:/Users/gupta/Desktop/Digital Portfolio Claude')",
       "Bash(git commit -q -m 'Elevate Phase A: cinematic hero + metrics band + scroll polish *)",
       "Bash(git commit -q -m 'Elevate Phase B: richer projects, timeline & skills *)",
-      "Bash(git commit -q -m 'Elevate Phase C: section headers + verified AA *)"
+      "Bash(git commit -q -m 'Elevate Phase C: section headers + verified AA *)",
+      "Bash(node __TRACKED_VAR__/assemble.js __TRACKED_VAR__/snapshot.html)"
     ]
   }
 }

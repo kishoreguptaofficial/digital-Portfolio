@@ -165,7 +165,7 @@
   }
 
   /* ---------------- TIMELINE DRAW-IN ---------------- */
-  var timeline = document.querySelector(".timeline");
+  var timeline = document.querySelector(".htimeline");
   if (timeline) {
     if (prefersReduced || !("IntersectionObserver" in window)) {
       timeline.classList.add("drawn");
