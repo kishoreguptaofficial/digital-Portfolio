@@ -98,9 +98,9 @@ body.menu-open { overflow: hidden; }
 .section { padding-block: var(--space-3xl); }
 .section-alt { background: var(--bg-elevated); }
 .section-head { display: flex; align-items: center; gap: var(--space-sm); margin-bottom: var(--space-lg); }
-.section-ico { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 42px; height: 42px; color: var(--accent); background: var(--accent-soft); border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent); border-radius: var(--radius-md); box-shadow: var(--shadow-sm); transition: transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast) var(--ease-out); }
-.section-ico svg { width: 22px; height: 22px; }
-.section-head:hover .section-ico { transform: rotate(-4deg) scale(1.06); box-shadow: 0 0 0 4px var(--accent-soft); }
+.section-ico { display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0; width: 42px; height: 42px; color: #0c1016; background: linear-gradient(135deg, #2ee88f 0%, #22d3c9 48%, #7c8cff 100%); border-radius: 13px; box-shadow: var(--shadow-sm), inset 0 1px 0 rgba(255, 255, 255, 0.38); transition: transform var(--dur-fast) var(--ease-spring), box-shadow var(--dur-fast) var(--ease-out); }
+.section-ico svg { width: 21px; height: 21px; stroke-width: 2; }
+.section-head:hover .section-ico { transform: rotate(-4deg) scale(1.07); box-shadow: var(--shadow-md), inset 0 1px 0 rgba(255, 255, 255, 0.45); }
 @media (prefers-reduced-motion: reduce) { .section-ico { transition: none; } .section-head:hover .section-ico { transform: none; } }
 .section-title { font-size: var(--step-4); }
 .section-head::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, var(--border-strong), transparent); }
