@@ -284,7 +284,11 @@ body.menu-open { overflow: hidden; }
 .pub-meta { margin: 0.45em 0 0; color: var(--text-muted); font-family: var(--font-mono); font-size: var(--step--1); }
 .pub-venue { color: var(--accent); font-weight: var(--weight-semibold); }
 .pub-abstract { margin: var(--space-md) 0 var(--space-lg); color: var(--text-muted); max-width: 72ch; }
-.pub-btn { flex-shrink: 0; align-self: flex-start; }
+.pub-btn { flex-shrink: 0; align-self: flex-start; border-color: var(--accent); color: var(--accent); }
+.pub-btn:hover { background: var(--accent); color: var(--text-on-accent); border-color: var(--accent); box-shadow: var(--shadow-md); }
+.pub-btn-arrow { transition: transform var(--dur-fast) var(--ease-out); }
+.pub-btn:hover .pub-btn-arrow { transform: translate(2px, -2px); }
+@media (prefers-reduced-motion: reduce) { .pub-btn:hover .pub-btn-arrow { transform: none; } }
 
 .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-lg); }
 .article-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform var(--dur-mid) var(--ease-spring), border-color var(--dur-mid), box-shadow var(--dur-mid); }
