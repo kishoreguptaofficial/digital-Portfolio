@@ -276,6 +276,16 @@ body.menu-open { overflow: hidden; }
 /* ============================================================
    ARTICLES
    ============================================================ */
+/* Publications */
+.pub-list { list-style: none; display: grid; gap: var(--space-md); }
+.pub-card { display: flex; flex-direction: column; align-items: flex-start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform var(--dur-mid) var(--ease-spring), border-color var(--dur-mid), box-shadow var(--dur-mid); }
+.pub-card:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
+.pub-title { font-size: var(--step-2); line-height: 1.25; margin: 0; }
+.pub-meta { margin: 0.45em 0 0; color: var(--text-muted); font-family: var(--font-mono); font-size: var(--step--1); }
+.pub-venue { color: var(--accent); font-weight: var(--weight-semibold); }
+.pub-abstract { margin: var(--space-md) 0 var(--space-lg); color: var(--text-muted); max-width: 72ch; }
+.pub-btn { flex-shrink: 0; align-self: flex-start; }
+
 .articles-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: var(--space-lg); }
 .article-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); box-shadow: var(--shadow-sm); transition: transform var(--dur-mid) var(--ease-spring), border-color var(--dur-mid), box-shadow var(--dur-mid); }
 .article-card:hover { transform: translateY(-6px) scale(1.015); border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
