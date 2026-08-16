@@ -19,9 +19,6 @@ js/
   main.js                      Theme toggle, menu, filters, reveal, contact form
 images/
   logo.svg  profile.webp  profile-opt.jpg  og-cover.png
-articles/
-  scaling-test-framework.html
-  accessibility-beyond-checklist.html
 Kishore_Gupta_Resume.pdf       Kept at root so /Kishore_Gupta_Resume.pdf still works
 ```
 
@@ -58,6 +55,6 @@ Because it's a root-level static site, `/Kishore_Gupta_Resume.pdf` and all exist
 ## Notes for future edits
 
 - **Colors/spacing/type:** edit `css/tokens.css` — everything else references the tokens.
-- **New article:** copy an existing file in `articles/`, update the content and `<title>`/meta/JSON-LD, add a card in the Articles section of `index.html`, and add a `<url>` to `sitemap.xml`.
+- **New publication:** add a `<li class="pub-card">` inside the `.pub-list` in the Publications section of `index.html` (title, `.pub-meta` venue/date, optional `.pub-abstract`, and a "Show publication" button linking to the source).
 - **Contact form:** uses EmailJS (service `service_85maghr`, template `template_poq5olc`). Falls back to a mailto link if EmailJS is unavailable.
 - `node_modules/` (only used to regenerate optimized images via `sharp`) is git-ignored and not needed to run or deploy.
