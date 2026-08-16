@@ -198,10 +198,8 @@ body.menu-open { overflow: hidden; }
 .htimeline:focus-visible { outline: none; box-shadow: var(--ring); border-radius: var(--radius-sm); }
 .htimeline::-webkit-scrollbar { height: 6px; }
 .htimeline::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: var(--radius-pill); }
-.htl-note { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-dim); margin: 0 0 var(--space-lg); display: flex; align-items: center; gap: 0.5em; }
-.htl-note-arrow { color: var(--accent); font-size: var(--step-1); line-height: 1; }
 .htl { display: flex; min-width: max-content; padding-top: 40px; list-style: none; }
-.htl-item { position: relative; flex: 0 0 214px; padding: 0 var(--space-md); scroll-snap-align: start; cursor: help; text-align: center; --card-accent: var(--accent); }
+.htl-item { position: relative; flex: 0 0 214px; padding: 0 var(--space-md); scroll-snap-align: start; text-align: center; --card-accent: var(--accent); }
 .htl-item:focus-visible { outline: none; box-shadow: var(--ring); border-radius: var(--radius-sm); }
 .htl-item[data-company="Infosys"] { --card-accent: #2ee88f; }
 .htl-item[data-company="UST"] { --card-accent: #8a97ff; }
@@ -209,6 +207,8 @@ body.menu-open { overflow: hidden; }
 .htl-item::after { content: ""; position: absolute; top: -34px; left: 0; width: 100%; height: 2px; background: var(--border-strong); z-index: 0; }
 .htl-item:first-child::after { left: 50%; width: 50%; }
 .htl-item:last-child::after { width: 50%; }
+/* progression arrow between dots (points left — toward the most recent role) */
+.htl-item:not(:first-child)::before { content: "\2039"; position: absolute; top: -34px; left: 0; transform: translate(-50%, -55%); z-index: 2; font-size: 1.5rem; line-height: 1; color: var(--card-accent); text-shadow: 0 0 0.4em var(--bg); }
 /* node */
 .htl-node { position: absolute; top: -40px; left: 50%; transform: translateX(-50%); width: 14px; height: 14px; border-radius: 50%; background: var(--bg); border: 3px solid var(--card-accent); z-index: 1; box-shadow: 0 0 0 4px color-mix(in srgb, var(--card-accent) 16%, transparent); transition: transform var(--dur-fast) var(--ease-spring); }
 .section-alt .htl-node { background: var(--bg-elevated); }
