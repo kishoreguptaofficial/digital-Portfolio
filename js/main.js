@@ -176,6 +176,57 @@
     }
   }
 
+  /* ---------------- TIMELINE TOOLTIP (custom, card-styled) ---------------- */
+  var htlItems = document.querySelectorAll(".htl-item");
+  if (htlItems.length) {
+    var tip = document.createElement("div");
+    tip.className = "tl-tooltip";
+    tip.setAttribute("aria-hidden", "true");
+    tip.innerHTML =
+      '<span class="tl-tip-company"><span class="tl-tip-dot"></span><span class="tl-tip-company-name"></span></span>' +
+      '<span class="tl-tip-role"></span><span class="tl-tip-date"></span><span class="tl-tip-caret"></span>';
+    document.body.appendChild(tip);
+    var tipName = tip.querySelector(".tl-tip-company-name");
+    var tipRole = tip.querySelector(".tl-tip-role");
+    var tipDate = tip.querySelector(".tl-tip-date");
+    var tipCaret = tip.querySelector(".tl-tip-caret");
+    var activeItem = null;
+
+    function positionTip(item) {
+      var node = item.querySelector(".htl-node") || item;
+      var r = node.getBoundingClientRect();
+      var tr = tip.getBoundingClientRect();
+      var left = r.left + r.width / 2 - tr.width / 2;
+      left = Math.max(8, Math.min(left, window.innerWidth - tr.width - 8));
+      var top = r.top - tr.height - 12;
+      tip.style.left = left + "px";
+      tip.style.top = top + "px";
+      var caretX = r.left + r.width / 2 - left;
+      tipCaret.style.left = Math.max(14, Math.min(caretX, tr.width - 14)) + "px";
+    }
+    function showTip(item) {
+      activeItem = item;
+      tipName.textContent = item.dataset.company || "";
+      var roleEl = item.querySelector(".htl-role");
+      var yearEl = item.querySelector(".htl-year");
+      tipRole.textContent = roleEl ? roleEl.textContent : "";
+      tipDate.textContent = yearEl ? yearEl.textContent : "";
+      tip.style.setProperty("--tip-accent", getComputedStyle(item).getPropertyValue("--card-accent").trim());
+      positionTip(item);
+      tip.classList.add("show");
+    }
+    function hideTip() { activeItem = null; tip.classList.remove("show"); }
+
+    htlItems.forEach(function (item) {
+      item.addEventListener("mouseenter", function () { showTip(item); });
+      item.addEventListener("mouseleave", hideTip);
+      item.addEventListener("focus", function () { showTip(item); });
+      item.addEventListener("blur", hideTip);
+    });
+    if (timeline) timeline.addEventListener("scroll", function () { if (activeItem) positionTip(activeItem); }, { passive: true });
+    window.addEventListener("scroll", function () { if (activeItem) hideTip(); }, { passive: true });
+  }
+
   /* ---------------- EMAIL / PHONE REVEAL (obfuscated) ---------------- */
   /* Stored base64 so raw values aren't in page source as plain text. */
   var DATA = {
