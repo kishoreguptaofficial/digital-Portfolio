@@ -126,27 +126,24 @@
   });
 
   /* ---------------- PROJECT FILTERS ---------------- */
-  var activeFilters = { domain: "all", role: "all" };
+  var activeDomain = "all";
   var cards = document.querySelectorAll(".project-card");
   var emptyMsg = document.getElementById("filterEmpty");
 
   function applyFilters() {
     var visible = 0;
     cards.forEach(function (card) {
-      var okDomain = activeFilters.domain === "all" || card.dataset.domain === activeFilters.domain;
-      var okRole = activeFilters.role === "all" || card.dataset.role === activeFilters.role;
-      var show = okDomain && okRole;
+      var show = activeDomain === "all" || card.dataset.domain === activeDomain;
       card.style.display = show ? "" : "none";
       if (show) visible++;
     });
     if (emptyMsg) emptyMsg.hidden = visible !== 0;
   }
 
-  document.querySelectorAll(".filter").forEach(function (btn) {
+  document.querySelectorAll('.filter[data-filter-type="domain"]').forEach(function (btn) {
     btn.addEventListener("click", function () {
-      var type = btn.dataset.filterType;
-      activeFilters[type] = btn.dataset.value;
-      document.querySelectorAll('.filter[data-filter-type="' + type + '"]').forEach(function (b) {
+      activeDomain = btn.dataset.value;
+      document.querySelectorAll('.filter[data-filter-type="domain"]').forEach(function (b) {
         b.setAttribute("aria-pressed", b === btn ? "true" : "false");
       });
       applyFilters();
