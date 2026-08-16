@@ -110,7 +110,8 @@ body.menu-open { overflow: hidden; }
    HERO
    ============================================================ */
 .hero { position: relative; min-height: 92vh; display: flex; align-items: center; padding-block: var(--space-3xl) var(--space-2xl); overflow: hidden; }
-.hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.05fr 0.95fr; gap: var(--space-2xl); align-items: center; width: 100%; }
+.hero-inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: var(--space-2xl); align-items: center; width: 100%; }
+.hero-copy { max-width: 46rem; }
 
 /* animated aurora + grid */
 .hero-bg { position: absolute; inset: 0; z-index: 0; overflow: hidden; pointer-events: none; }
