@@ -283,7 +283,7 @@ body.menu-open { overflow: hidden; }
 .pub-title { font-size: var(--step-2); line-height: 1.25; margin: 0; }
 .pub-meta { margin: 0.45em 0 0; color: var(--text-muted); font-family: var(--font-mono); font-size: var(--step--1); }
 .pub-venue { color: var(--accent); font-weight: var(--weight-semibold); }
-.pub-abstract { margin: var(--space-md) 0 var(--space-lg); color: var(--text-muted); max-width: 72ch; }
+.pub-abstract { margin: var(--space-md) 0 var(--space-lg); color: var(--text-muted); width: 100%; line-height: 1.7; }
 .pub-btn { flex-shrink: 0; align-self: flex-start; border-color: var(--accent); color: var(--accent); }
 .pub-btn:hover { background: var(--accent); color: var(--text-on-accent); border-color: var(--accent); box-shadow: var(--shadow-md); }
 .pub-btn-arrow { transition: transform var(--dur-fast) var(--ease-out); }
