@@ -342,7 +342,7 @@ body.menu-open { overflow: hidden; }
 .whatsapp-link { display: inline-flex !important; align-items: center; gap: var(--space-xs); width: auto !important; height: auto !important; border-radius: var(--radius-pill) !important; padding: 0.6em 1.1em; font-weight: var(--weight-semibold); font-size: var(--step--1); }
 
 .field { position: relative; margin-bottom: var(--space-md); }
-.field input, .field textarea { width: 100%; background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); color: var(--text); font: inherit; padding: 1.25em 0.9em 0.55em; transition: border-color var(--dur-fast), box-shadow var(--dur-fast); }
+.field input, .field textarea { width: 100%; background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); color: var(--text); font: inherit; padding: 0.9em; transition: border-color var(--dur-fast), box-shadow var(--dur-fast); }
 .field textarea { resize: vertical; min-height: 130px; }
 /* Keep the field background constant even when the browser autofills */
 .field input:-webkit-autofill,
@@ -357,9 +357,16 @@ body.menu-open { overflow: hidden; }
   transition: background-color 100000s ease-out 0s;
 }
 .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
-.field label { position: absolute; left: 0.9em; top: 1em; color: var(--text-dim); pointer-events: none; transition: all var(--dur-fast) var(--ease-out); }
+.field label { position: absolute; left: 0.9em; color: var(--text-dim); pointer-events: none; background: transparent; padding: 0; transition: top var(--dur-fast) var(--ease-out), left var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out), font-size var(--dur-fast) var(--ease-out), color var(--dur-fast) var(--ease-out); }
+.field input + label { top: 50%; transform: translateY(-50%); }
+.field textarea + label { top: 0.9em; }
+/* Floated: sits on the top border (notched), reduced size */
 .field input:focus + label, .field input:not(:placeholder-shown) + label,
-.field textarea:focus + label, .field textarea:not(:placeholder-shown) + label { top: 0.4em; font-size: var(--step--1); color: var(--accent); }
+.field textarea:focus + label, .field textarea:not(:placeholder-shown) + label {
+  top: 0; left: 0.6em; transform: translateY(-50%);
+  font-size: var(--step--1); color: var(--accent);
+  background: var(--bg-elevated); padding: 0 0.35em;
+}
 .form-actions { display: flex; align-items: center; gap: var(--space-md); flex-wrap: wrap; }
 .form-status { font-size: var(--step--1); font-weight: var(--weight-semibold); display: inline-flex; align-items: center; }
 .form-status.ok { color: var(--accent); }
