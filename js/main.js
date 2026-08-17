@@ -323,6 +323,7 @@
   var form = document.getElementById("contactForm");
   var statusEl = document.getElementById("cf-status");
   var submitBtn = document.getElementById("cf-submit");
+  var statusTimer = null;
 
   if (typeof emailjs !== "undefined") {
     try { emailjs.init("epE6ueg3lV0KVg7ju"); } catch (e) {}
@@ -344,8 +345,14 @@
 
       var done = function (ok) {
         submitBtn.disabled = false;
-        if (ok) { setStatus("✓ Message sent successfully", true); form.reset(); }
-        else { setStatus("Couldn't send - please email me directly.", false); }
+        if (ok) {
+          setStatus("✓ Message sent successfully", true);
+          form.reset();
+          if (statusTimer) clearTimeout(statusTimer);
+          statusTimer = setTimeout(function () { setStatus("", true); }, 5000);
+        } else {
+          setStatus("Couldn't send - please email me directly.", false);
+        }
       };
 
       if (typeof emailjs !== "undefined" && emailjs.sendForm) {
