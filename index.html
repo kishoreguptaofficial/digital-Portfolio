@@ -9,16 +9,29 @@
   <meta name="author" content="Kishore Gupta" />
   <link rel="canonical" href="https://kishoreguptaofficial.in/" />
 
-  <!-- Open Graph / Twitter -->
+  <!-- Search engine directives -->
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Kishore Gupta" />
+  <meta property="og:locale" content="en_US" />
   <meta property="og:url" content="https://kishoreguptaofficial.in/" />
   <meta property="og:title" content="Kishore Gupta - QA Lead & Automation Engineer" />
   <meta property="og:description" content="I build quality into software. 10+ years of scalable test automation and reliability across web, API, and cloud." />
   <meta property="og:image" content="https://kishoreguptaofficial.in/images/og-cover.png" />
+  <meta property="og:image:secure_url" content="https://kishoreguptaofficial.in/images/og-cover.png" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Kishore Gupta - QA Lead & Automation Engineer" />
+
+  <!-- Twitter -->
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Kishore Gupta - QA Lead & Automation Engineer" />
   <meta name="twitter:description" content="I build quality into software. 10+ years of scalable test automation and reliability." />
   <meta name="twitter:image" content="https://kishoreguptaofficial.in/images/og-cover.png" />
+  <meta name="twitter:image:alt" content="Kishore Gupta - QA Lead & Automation Engineer" />
 
   <!-- Favicon -->
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
@@ -42,17 +55,52 @@
   <link rel="stylesheet" href="css/tokens.css" />
   <link rel="stylesheet" href="css/styles.css" />
 
-  <!-- JSON-LD Person schema -->
+  <!-- JSON-LD structured data -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Kishore Gupta",
-    "jobTitle": "QA Lead & Automation Engineer",
-    "url": "https://kishoreguptaofficial.in/",
-    "sameAs": ["https://www.linkedin.com/in/kishoreguptaofficial/"],
-    "knowsAbout": ["Test Automation", "Selenium", "API Testing", "CI/CD", "Accessibility Testing", "AWS", "Quality Strategy"],
-    "description": "QA Lead with 10+ years building scalable test frameworks and reliability across healthcare, banking, insurance, and manufacturing."
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://kishoreguptaofficial.in/#person",
+        "name": "Kishore Gupta",
+        "jobTitle": "QA Lead & Automation Engineer",
+        "url": "https://kishoreguptaofficial.in/",
+        "image": "https://kishoreguptaofficial.in/images/profile-opt.jpg",
+        "sameAs": ["https://www.linkedin.com/in/kishoreguptaofficial/"],
+        "worksFor": { "@type": "Organization", "name": "UST" },
+        "address": { "@type": "PostalAddress", "addressCountry": "IN" },
+        "knowsAbout": ["Test Automation", "Selenium", "Python", "API Testing", "CI/CD", "Accessibility Testing", "AWS", "SQL", "Test Frameworks", "Quality Strategy"],
+        "description": "QA Lead with 10+ years building scalable test frameworks and reliability across healthcare, banking, insurance, and manufacturing."
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kishoreguptaofficial.in/#website",
+        "url": "https://kishoreguptaofficial.in/",
+        "name": "Kishore Gupta - Portfolio",
+        "inLanguage": "en",
+        "author": { "@id": "https://kishoreguptaofficial.in/#person" },
+        "publisher": { "@id": "https://kishoreguptaofficial.in/#person" }
+      },
+      {
+        "@type": "ProfilePage",
+        "@id": "https://kishoreguptaofficial.in/#webpage",
+        "url": "https://kishoreguptaofficial.in/",
+        "name": "Kishore Gupta - Portfolio",
+        "isPartOf": { "@id": "https://kishoreguptaofficial.in/#website" },
+        "about": { "@id": "https://kishoreguptaofficial.in/#person" },
+        "primaryImageOfPage": "https://kishoreguptaofficial.in/images/og-cover.png"
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "name": "Adaptive Antenna Selection in MIMO System",
+        "author": { "@id": "https://kishoreguptaofficial.in/#person" },
+        "datePublished": "2016-09-15",
+        "publisher": { "@type": "Organization", "name": "IEEE" },
+        "url": "https://ieeexplore.ieee.org/abstract/document/7566735",
+        "isAccessibleForFree": false
+      }
+    ]
   }
   </script>
 </head>
