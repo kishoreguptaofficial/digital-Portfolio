@@ -9,19 +9,39 @@
 
   /* ---------------- THEME TOGGLE ---------------- */
   var themeToggle = document.getElementById("themeToggle");
+  var themeTip = themeToggle ? themeToggle.querySelector(".theme-tip") : null;
   function systemTheme() {
     return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
   }
   function currentTheme() {
     return root.getAttribute("data-theme") || systemTheme();
   }
+  function syncThemeUI() {
+    var th = currentTheme();
+    if (themeTip) themeTip.textContent = th === "dark" ? "Dark Mode" : "Light Mode";
+    if (themeToggle) themeToggle.setAttribute("aria-label", th === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  }
   if (themeToggle) {
     themeToggle.addEventListener("click", function () {
       var next = currentTheme() === "dark" ? "light" : "dark";
       root.setAttribute("data-theme", next);
       try { localStorage.setItem("theme", next); } catch (e) {}
+      syncThemeUI();
     });
   }
+  /* Follow the OS setting live until the visitor picks a theme themselves. */
+  var themeMq = window.matchMedia("(prefers-color-scheme: dark)");
+  function onSystemThemeChange() {
+    var stored = null;
+    try { stored = localStorage.getItem("theme"); } catch (e) {}
+    if (stored !== "light" && stored !== "dark") {
+      root.setAttribute("data-theme", themeMq.matches ? "dark" : "light");
+      syncThemeUI();
+    }
+  }
+  if (themeMq.addEventListener) themeMq.addEventListener("change", onSystemThemeChange);
+  else if (themeMq.addListener) themeMq.addListener(onSystemThemeChange);
+  syncThemeUI();
 
   /* ---------------- MOBILE MENU ---------------- */
   var menuToggle = document.getElementById("menuToggle");

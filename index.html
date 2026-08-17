@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Kishore Gupta - Portfolio</title>
+  <title>Kishore Gupta - Portfolio | QA Lead & Automation Engineer</title>
   <meta name="description" content="Kishore Gupta is a QA Lead with 10+ years building scalable test automation and reliability across healthcare, banking, insurance, and manufacturing systems." />
   <meta name="author" content="Kishore Gupta" />
   <link rel="canonical" href="https://kishoreguptaofficial.in/" />
@@ -37,12 +37,16 @@
   <link rel="icon" href="favicon.svg" type="image/svg+xml" />
   <meta name="theme-color" content="#0c0e12" />
 
-  <!-- Set theme before paint to avoid flash (dark is the default) -->
+  <!-- Set theme before paint to avoid flash (default follows the OS setting) -->
   <script>
     (function () {
       document.documentElement.classList.add("js");
-      var t = "dark";
-      try { var s = localStorage.getItem("theme"); if (s === "light" || s === "dark") t = s; } catch (e) {}
+      var t;
+      try {
+        var s = localStorage.getItem("theme");
+        t = (s === "light" || s === "dark") ? s
+          : (window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      } catch (e) { t = "dark"; }
       document.documentElement.setAttribute("data-theme", t);
     })();
   </script>
@@ -130,6 +134,7 @@
         <button class="theme-toggle" id="themeToggle" type="button" aria-label="Switch color theme">
           <svg class="icon-sun" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><circle cx="12" cy="12" r="4.2" fill="currentColor"/><g stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="12" y1="2.5" x2="12" y2="5"/><line x1="12" y1="19" x2="12" y2="21.5"/><line x1="2.5" y1="12" x2="5" y2="12"/><line x1="19" y1="12" x2="21.5" y2="12"/><line x1="5.1" y1="5.1" x2="6.9" y2="6.9"/><line x1="17.1" y1="17.1" x2="18.9" y2="18.9"/><line x1="5.1" y1="18.9" x2="6.9" y2="17.1"/><line x1="17.1" y1="6.9" x2="18.9" y2="5.1"/></g></svg>
           <svg class="icon-moon" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z" fill="currentColor"/></svg>
+          <span class="theme-tip" aria-hidden="true">Dark Mode</span>
         </button>
 
         <button class="menu-toggle" id="menuToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
