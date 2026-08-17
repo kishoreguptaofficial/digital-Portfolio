@@ -234,29 +234,78 @@
     phone: atob("KzkxIDk5Nzk5ODA5OTM=")
   };
   var revealed = { email: false, phone: false };
+  var HIDE_MS = 10000;
 
-  function wireReveal(btnId, textId, key) {
-    var btn = document.getElementById(btnId);
-    var text = document.getElementById(textId);
-    if (!btn || !text) return;
-    btn.addEventListener("click", function () {
-      if (!revealed[key]) {
-        text.textContent = DATA[key];
-        revealed[key] = true;
-        btn.setAttribute("aria-label", "Copy " + key);
-      } else {
-        if (navigator.clipboard) {
-          navigator.clipboard.writeText(DATA[key]).then(function () {
-            var prev = text.textContent;
-            text.textContent = "Copied ✓";
-            setTimeout(function () { text.textContent = prev; }, 1400);
-          });
-        }
-      }
+  function legacyCopy(t) {
+    return new Promise(function (res, rej) {
+      try {
+        var ta = document.createElement("textarea");
+        ta.value = t;
+        ta.setAttribute("readonly", "");
+        ta.style.position = "fixed";
+        ta.style.top = "0";
+        ta.style.opacity = "0";
+        document.body.appendChild(ta);
+        ta.focus();
+        ta.select();
+        var ok = document.execCommand("copy");
+        document.body.removeChild(ta);
+        ok ? res() : rej();
+      } catch (e) { rej(e); }
     });
   }
-  wireReveal("emailReveal", "emailText", "email");
-  wireReveal("phoneReveal", "phoneText", "phone");
+  function copyText(t) {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      return navigator.clipboard.writeText(t).catch(function () { return legacyCopy(t); });
+    }
+    return legacyCopy(t);
+  }
+
+  function wireReveal(triggerId, textId, copyId, key, placeholder, copyLabel) {
+    var trigger = document.getElementById(triggerId);
+    var text = document.getElementById(textId);
+    var copyBtn = document.getElementById(copyId);
+    if (!trigger || !text || !copyBtn) return;
+    var tip = copyBtn.querySelector(".copy-tip");
+    var hideTimer = null, resetTimer = null;
+
+    function hide() {
+      text.textContent = placeholder;
+      copyBtn.hidden = true;
+      copyBtn.classList.remove("copied");
+      if (tip) tip.textContent = "Copy";
+      revealed[key] = false;
+      if (hideTimer) { clearTimeout(hideTimer); hideTimer = null; }
+    }
+    function scheduleHide() {
+      if (hideTimer) clearTimeout(hideTimer);
+      hideTimer = setTimeout(hide, HIDE_MS);
+    }
+
+    trigger.addEventListener("click", function () {
+      text.textContent = DATA[key];
+      revealed[key] = true;
+      copyBtn.hidden = false;
+      scheduleHide();
+    });
+
+    copyBtn.addEventListener("click", function () {
+      copyText(DATA[key]).then(function () {
+        copyBtn.classList.add("copied");
+        if (tip) tip.textContent = "Copied";
+        copyBtn.setAttribute("aria-label", "Copied");
+        scheduleHide();
+        if (resetTimer) clearTimeout(resetTimer);
+        resetTimer = setTimeout(function () {
+          copyBtn.classList.remove("copied");
+          if (tip) tip.textContent = "Copy";
+          copyBtn.setAttribute("aria-label", copyLabel);
+        }, 2000);
+      });
+    });
+  }
+  wireReveal("emailReveal", "emailText", "emailCopy", "email", "Click to view email", "Copy email address");
+  wireReveal("phoneReveal", "phoneText", "phoneCopy", "phone", "Click to view number", "Copy phone number");
 
   /* Mailto fallback for contact form */
   var mailto = document.getElementById("mailtoFallback");
@@ -273,8 +322,6 @@
   /* ---------------- CONTACT FORM (EmailJS + graceful fallback) ---------------- */
   var form = document.getElementById("contactForm");
   var statusEl = document.getElementById("cf-status");
-  var loader = document.getElementById("cf-loader");
-  var btnText = document.getElementById("cf-btn-text");
   var submitBtn = document.getElementById("cf-submit");
 
   if (typeof emailjs !== "undefined") {
@@ -283,7 +330,8 @@
 
   function setStatus(msg, ok) {
     statusEl.textContent = msg;
-    statusEl.style.color = ok ? "var(--accent)" : "#e5484d";
+    statusEl.classList.remove("ok", "err");
+    if (msg) statusEl.classList.add(ok ? "ok" : "err");
   }
 
   if (form) {
@@ -291,16 +339,12 @@
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
 
-      loader.hidden = false;
-      btnText.style.opacity = "0.6";
       submitBtn.disabled = true;
       setStatus("", true);
 
       var done = function (ok) {
-        loader.hidden = true;
-        btnText.style.opacity = "1";
         submitBtn.disabled = false;
-        if (ok) { setStatus("✔ Message sent successfully", true); form.reset(); }
+        if (ok) { setStatus("✓ Message sent successfully", true); form.reset(); }
         else { setStatus("Couldn't send - please email me directly.", false); }
       };
 
