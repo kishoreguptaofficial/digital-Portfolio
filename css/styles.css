@@ -245,7 +245,7 @@ body.menu-open { overflow: hidden; }
 .filter[aria-pressed="true"] { background: var(--accent); color: var(--text-on-accent); border-color: var(--accent); }
 .filter-empty { color: var(--text-muted); font-style: italic; padding: var(--space-lg) 0; }
 
-.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 280px), 1fr)); gap: var(--space-lg); margin-top: var(--space-lg); }
 .project-card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius-lg); padding: var(--space-lg); display: flex; flex-direction: column; box-shadow: var(--shadow-sm); transition: transform var(--dur-mid) var(--ease-spring), border-color var(--dur-mid), box-shadow var(--dur-mid); }
 .project-card:hover { transform: translateY(-6px) scale(1.015); border-color: var(--border-strong); box-shadow: var(--shadow-lg); }
 .section-alt .project-card { background: var(--bg); }
@@ -480,10 +480,6 @@ html.js .reveal.in { opacity: 1; transform: none; }
 /* ============================================================
    RESPONSIVE
    ============================================================ */
-@media (max-width: 960px) {
-  .hero-inner { grid-template-columns: 1fr; gap: var(--space-xl); }
-  .hero-visual { max-width: 460px; order: 2; }
-}
 @media (max-width: 860px) {
   .nav-links { display: none; }
   .menu-toggle { display: flex; }
@@ -499,4 +495,18 @@ html.js .reveal.in { opacity: 1; transform: none; }
   .filter-label { min-width: 100%; margin-bottom: 2px; }
   .hero { min-height: auto; padding-top: var(--space-2xl); }
   .metric::after { display: none !important; }
+}
+/* Small mobile */
+@media (max-width: 480px) {
+  .hero-title { font-size: var(--step-4); }
+  .section { padding-block: var(--space-2xl); }
+  .project-card, .pub-card, .skill-card { padding: var(--space-md); }
+  .soft-panel { padding: var(--space-lg); }
+  .pub-btn { align-self: stretch; justify-content: center; }
+  .form-actions { gap: var(--space-sm); }
+}
+/* Very small mobile */
+@media (max-width: 360px) {
+  .footer-nav { grid-template-columns: 1fr; }
+  .hero-trust { gap: var(--space-sm) var(--space-md); }
 }
