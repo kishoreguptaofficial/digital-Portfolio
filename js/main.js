@@ -18,7 +18,7 @@
   }
   function syncThemeUI() {
     var th = currentTheme();
-    if (themeTip) themeTip.textContent = th === "dark" ? "Dark Mode" : "Light Mode";
+    if (themeTip) themeTip.textContent = th === "dark" ? "Light Mode" : "Dark Mode";
     if (themeToggle) themeToggle.setAttribute("aria-label", th === "dark" ? "Switch to light mode" : "Switch to dark mode");
   }
   if (themeToggle) {
