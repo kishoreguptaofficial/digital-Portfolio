@@ -344,6 +344,18 @@ body.menu-open { overflow: hidden; }
 .field { position: relative; margin-bottom: var(--space-md); }
 .field input, .field textarea { width: 100%; background: var(--bg); border: 1px solid var(--border-strong); border-radius: var(--radius-sm); color: var(--text); font: inherit; padding: 1.25em 0.9em 0.55em; transition: border-color var(--dur-fast), box-shadow var(--dur-fast); }
 .field textarea { resize: vertical; min-height: 130px; }
+/* Keep the field background constant even when the browser autofills */
+.field input:-webkit-autofill,
+.field input:-webkit-autofill:hover,
+.field input:-webkit-autofill:focus,
+.field input:-webkit-autofill:active,
+.field textarea:-webkit-autofill {
+  -webkit-text-fill-color: var(--text);
+  -webkit-box-shadow: 0 0 0 100px var(--bg) inset;
+  box-shadow: 0 0 0 100px var(--bg) inset;
+  caret-color: var(--text);
+  transition: background-color 100000s ease-out 0s;
+}
 .field input:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: var(--ring); }
 .field label { position: absolute; left: 0.9em; top: 1em; color: var(--text-dim); pointer-events: none; transition: all var(--dur-fast) var(--ease-out); }
 .field input:focus + label, .field input:not(:placeholder-shown) + label,
