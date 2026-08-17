@@ -180,6 +180,9 @@ body.menu-open { overflow: hidden; }
 .to-top-fab.show { opacity: 1; transform: none; }
 .to-top-fab:hover { color: var(--accent); border-color: var(--accent); transform: translateY(-3px); }
 .to-top-fab:focus-visible { outline: none; box-shadow: var(--ring); }
+.fab-tip { position: absolute; bottom: calc(100% + 8px); right: 0; background: var(--bg-elevated); border: 1px solid var(--border-strong); color: var(--text); font-family: var(--font-body); font-size: var(--step--1); font-weight: var(--weight-medium); white-space: nowrap; padding: 0.28em 0.6em; border-radius: var(--radius-sm); box-shadow: var(--shadow-md); opacity: 0; pointer-events: none; transform: translateY(4px); transition: opacity var(--dur-fast) var(--ease-out), transform var(--dur-fast) var(--ease-out); }
+.to-top-fab:hover .fab-tip, .to-top-fab:focus-visible .fab-tip { opacity: 1; transform: translateY(0); }
+@media (prefers-reduced-motion: reduce) { .fab-tip { transition: opacity var(--dur-fast); transform: none; } }
 
 @media (prefers-reduced-motion: reduce) {
   .aurora, .status-dot { animation: none; }
