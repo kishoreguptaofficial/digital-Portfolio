@@ -1,5 +1,5 @@
 /* ============================================================
-   Kishore Gupta Portfolio — main.js
+   Kishore Gupta Portfolio - main.js
    Vanilla, no dependencies (EmailJS loaded separately).
    ============================================================ */
 (function () {
@@ -301,7 +301,7 @@
         btnText.style.opacity = "1";
         submitBtn.disabled = false;
         if (ok) { setStatus("✔ Message sent successfully", true); form.reset(); }
-        else { setStatus("Couldn't send — please email me directly.", false); }
+        else { setStatus("Couldn't send - please email me directly.", false); }
       };
 
       if (typeof emailjs !== "undefined" && emailjs.sendForm) {
