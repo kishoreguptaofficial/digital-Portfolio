@@ -1,0 +1,14 @@
+{
+  "name": "Kishore Gupta - Portfolio",
+  "short_name": "Kishore Gupta",
+  "description": "QA Lead & Automation Engineer - portfolio of Kishore Gupta.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0c0e12",
+  "theme_color": "#0c0e12",
+  "icons": [
+    { "src": "images/icon-192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "images/icon-512.png", "type": "image/png", "sizes": "512x512" },
+    { "src": "images/icon-512.png", "type": "image/png", "sizes": "512x512", "purpose": "any maskable" }
+  ]
+}

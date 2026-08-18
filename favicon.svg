@@ -1,17 +1,22 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Kishore Gupta">
   <defs>
-    <linearGradient id="fkg" x1="0" y1="0" x2="1" y2="1">
+    <linearGradient id="kg" x1="0" y1="0" x2="1" y2="1">
       <stop offset="0" stop-color="#2ee88f"/>
       <stop offset=".5" stop-color="#22d3c9"/>
       <stop offset="1" stop-color="#7c8cff"/>
     </linearGradient>
+    <linearGradient id="sheen" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".18"/>
+      <stop offset=".5" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
   </defs>
-  <rect width="120" height="120" rx="28" fill="url(#fkg)"/>
-  <g fill="none" stroke="#0c1016" stroke-width="10" stroke-linecap="round" stroke-linejoin="round" transform="translate(-6,0)">
-    <path d="M42 36 V84"/>
-    <path d="M42 60 L57 39"/>
-    <path d="M42 60 L59 84"/>
-    <path d="M92 53 A15 15 0 1 0 92 67"/>
-    <path d="M92 67 V60 H79"/>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#kg)"/>
+  <rect x="4" y="4" width="120" height="120" rx="30" fill="url(#sheen)"/>
+  <g fill="none" stroke="#0b1016" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M34 34 V94" stroke-width="15"/>
+    <path d="M41 64 L64 34" stroke-width="13"/>
+    <path d="M41 64 L66 94" stroke-width="13"/>
+    <path d="M104 53 A17 17 0 1 0 104 77" stroke-width="13"/>
+    <path d="M104 77 V64 H89" stroke-width="13"/>
   </g>
 </svg>
